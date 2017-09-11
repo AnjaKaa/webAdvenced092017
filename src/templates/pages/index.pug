@@ -1,13 +1,9 @@
-extends ../template
+extends ../templateMain
 
 block variables
 	- var title='Добро пожаловать'
 
 block content
-	h1 Главная
-	form
-		label(for="email") email
-		input(name="email" id="email")
-		label(for="password") password
-		input(name="password" id="password")
-		button Войти
+	include ../common/welcome.pug
+	include ../common/authorization.pug
+	.copyright Анна Власова | создано с любовью в LoftShcool | 2017

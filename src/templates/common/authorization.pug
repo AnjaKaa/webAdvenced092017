@@ -1,0 +1,21 @@
+section.authorization.off 
+	h2 Авторизуйтесь
+	form
+		.autorization_login
+			label(for="login") Логин
+			input(name="login" id="login" placeholder="Логин")
+		.autorization_password
+			label(for="password") Пароль
+			input(name="password" id="password" placeholder="Пароль")
+		.autorization_checkbox
+			input(type="checkbox" name="checkbox" id="checkbox" checked)
+			label(for="checkbox") Я человек
+		.autorization_radio
+			h3 Вы точно не робот?
+			input(type="radio" name="radio" id="radio1" checked)
+			label(for="radio1") Да
+			input(type="radio" name="radio" id="radio2" ) 
+			label(for="radio2") Нет
+		.autorization_buttons
+			button На главную
+			button Войти
