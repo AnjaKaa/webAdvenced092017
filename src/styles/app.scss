@@ -6,6 +6,12 @@ body {
 
 	min-height: 100vh;
 }
+.index_wrap {
+	min-width: 100%;
+	min-height:  100vh;
+	background: url(../images/background_mountains.jpg);
+	background-size: cover;
+}
 .text_title {
 	font-family: 'Roboto-Medium', sans-serif;
 	font-size: 28px;
