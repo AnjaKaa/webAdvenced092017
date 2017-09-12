@@ -15,6 +15,13 @@ const webpackConfig = require('./webpack.config.js');
 
 const eslint = require('gulp-eslint');
 
+// svg
+const svgSprite = require('gulp-svg-sprite');
+const svgmin = require('gulp-svgmin');
+const cheerio = require('gulp-cheerio');
+const replace = require('gulp-replace');
+
+
 const paths = {
     root: './build',
     templates: {
@@ -38,6 +45,10 @@ const paths = {
     fonts: {
         src: 'src/fonts/**/*.*',
         dest: 'build/assets/fonts/'
+    },
+    svgSprite: {
+        src: 'src/images/svgSprite/*.svg',
+        dest: 'build/assets/images/'
     }
 }
 
@@ -106,6 +117,40 @@ function lint() {
         .pipe(eslint.failAfterError());
 }
 
+// svgSprite
+function svgSpriteBuild() {
+    return gulp.src(paths.svgSprite.src)
+    // minify svg
+        .pipe(svgmin({
+            js2svg: {
+                pretty: true
+            }
+        }))
+        // remove all fill, style and stroke declarations in out shapes
+        .pipe(cheerio({
+            run: function ($) {
+                $('[fill]').removeAttr('fill');
+                $('[stroke]').removeAttr('stroke');
+                $('[style]').removeAttr('style');
+            },
+            parserOptions: {xmlMode: true}
+        }))
+        // cheerio plugin create unnecessary string '&gt;', so replace it.
+        .pipe(replace('&gt;', '>'))
+        // build svg sprite
+        .pipe(svgSprite({
+            mode: {
+                symbol: {
+                    sprite: "../sprite.svg",
+                    example: {
+                            dest:'../spriteSvgDemo.html'
+                    }
+                }
+            }
+        }))
+        .pipe(gulp.dest(paths.svgSprite.dest));
+}
+
 
 // экспортируем функции для доступа из терминала (gulp clean)
 exports.clean = clean;
@@ -117,7 +162,7 @@ exports.fonts = fonts;
 exports.lint = lint;
 exports.watch = watch;
 exports.server = server;
-
+exports.svgSpriteBuild = svgSpriteBuild;
 
 
 gulp.task('default', gulp.series(
@@ -128,6 +173,6 @@ gulp.task('default', gulp.series(
 
 gulp.task('build', gulp.series(
     clean,
-    gulp.parallel(styles,templates, images, fonts)
+    gulp.parallel(styles,templates, images, fonts,svgSpriteBuild)
     )
 );
