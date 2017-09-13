@@ -19,19 +19,8 @@ body {
 	z-index: 1;
 }
 
-/*.menu {
-	display: none;
-}*/
-.welcome .menu{
+.welcome .menu {
 	display: block;
-}
-
-.social_buttons {
-	list-style: none;
-	margin: 0;
-}
-.social_buttons_item {
-	display: inline-block;
 }
 
 .welcome .menu li:first-child {
@@ -53,6 +42,5 @@ body {
 	&:hover {
 		background: #fff;
 		color: #00bfa5;
-
 	}
 }

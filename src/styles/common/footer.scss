@@ -1,0 +1,44 @@
+.main_footer {
+    background: rgba(55,62,66,0.85);
+    color: #fff;
+
+    .copyright {
+        margin-right: 30px;
+        text-align: right;
+        letter-spacing: no-warp;
+        width: 50%;
+    }
+
+    .text-description {
+        text-align: left;
+        margin-left: 30px;
+    }
+    
+    .row:last-child{
+        opacity: 0.5;
+        border-top: 1px solid #ccc;
+        font-family: 'Roboto-Light', sans-serif;
+    }
+
+    .social_buttons_item{
+        margin-right: 10px;
+    }
+    li svg {
+        width: 36px;
+        height: 36px;
+        fill: #ccc;
+        transition: all .5s;
+      }
+      
+      li:hover svg {
+        fill: #fff;
+      }
+      
+      li:hover svg circle{
+        fill: none;
+      }
+
+      .social_buttons {
+          margin: 17px 20px;
+      }
+}

@@ -1,0 +1,47 @@
+
+.social_buttons {
+	list-style: none;
+	margin: 40px;
+}
+
+.social_buttons_item {
+    display: inline-block;
+    margin-right: 26px;
+    font-size: 0;
+}
+
+.welcome {
+     .icon {
+        fill:#73d4c8;
+        &:hover {
+            fill: #00bfa5;
+        }
+    }
+}
+
+.main_header{
+    .icon {
+        fill:#fff;
+        opacity: 0.5;
+            &:hover {
+            opacity: 1;
+            }
+        }
+    .social_buttons_item {
+        margin-right: 22px;
+    }    
+}
+
+
+.main_footer{
+    .icon {
+        fill:#fff;
+        opacity: 0.5;
+            &:hover {
+            opacity: 1;
+            }
+        }
+    .social_buttons_item {
+        margin-right: 22px;
+    }    
+}

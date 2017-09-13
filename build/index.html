@@ -13,34 +13,43 @@
   <body>
     <div class="index_wrap">
       <section class="welcome">
-        <div class="main_photo"><img src="../assets/images/photo.jpg"></div>
+        <div class="main_photo"><img src="./assets/images/photo.jpg"></div>
         <div class="text_title">Анна Власова</div>
         <div class="text_subtitle">Личный сайт вебразработчика</div>
         <ul class="social_buttons">
-          <li class="social_bittons_item">VK</li>
-          <li class="social_bittons_item">GitHub</li>
-          <li class="social_bittons_item">unknow</li>
+          <li class="social_buttons_item"><a href="https://vk.com/anja_kaa" alt="vk">
+              <svg class="icon" width="30" height="23">
+                <use xlink:href="./assets/images/sprite.svg#vk"></use>
+              </svg>VK </a></li>
+          <li class="social_buttons_item"><a href="https://github.com/VlaSovaAnna" alt="github">
+              <svg class="icon" width="30" height="23">
+                <use xlink:href="./assets/images/sprite.svg#github"></use>
+              </svg>GitHub </a></li>
+          <li class="social_buttons_item"><a href="#" alt="in">
+              <svg class="icon" width="30" height="23">
+                <use xlink:href="./assets/images/sprite.svg#in"></use>
+              </svg>IN </a></li>
         </ul>
-        <div class="menu">
+        <div class="menu_wrap">
           <ul class="menu">
-            <li><a href="./index.html">Главная</a></li>
-            <li><a href="./about.html">Обо мне</a></li>
-            <li><a href="./my-works.html">Мои работы</a></li>
-            <li><a href="./blog.html">Блог</a></li>
+            <li class="menu_item"><a href="./index.html">Главная</a></li>
+            <li class="menu_item"><a href="./about.html">Обо мне</a></li>
+            <li class="menu_item"><a href="./my-works.html">Мои работы</a></li>
+            <li class="menu_item"><a class="last" href="./blog.html">Блог</a></li>
           </ul>
         </div>
       </section>
       <button class="authorization_button">Авторизоваться</button>
-      <section class="authorization off"> 
-        <h2>Авторизуйтесь</h2>
-        <form>
+      <section class="authorization off">
+        <h2 class="title2">Авторизуйтесь</h2>
+        <form class="authorization_form">
           <div class="autorization_login">
             <label for="login">Логин</label>
-            <input name="login" id="login" placeholder="Логин">
+            <input type="text" name="login" id="login" placeholder="Логин">
           </div>
           <div class="autorization_password">
             <label for="password">Пароль</label>
-            <input name="password" id="password" placeholder="Пароль">
+            <input type="password" name="password" id="password" placeholder="Пароль">
           </div>
           <div class="autorization_checkbox">
             <input type="checkbox" name="checkbox" id="checkbox" checked>
@@ -53,13 +62,17 @@
             <input type="radio" name="radio" id="radio2">
             <label for="radio2">Нет</label>
           </div>
-          <div class="autorization_buttons">
-            <button>На главную</button>
-            <button>Войти</button>
-          </div>
+          <ul class="autorization_buttons">
+            <li class="buttons_bottom_item"> 
+              <button class="btn">На главную</button>
+            </li>
+            <li class="buttons_bottom_item"> 
+              <button class="btn last">Войти</button>
+            </li>
+          </ul>
         </form>
       </section>
-      <div class="copyright">Анна Власова | создано с любовью в LoftShcool | 2017</div>
+      <div class="copyright">&copy;Анна Власова | создано с любовью в LoftShcool | 2017</div>
     </div>
   </body>
 </html>

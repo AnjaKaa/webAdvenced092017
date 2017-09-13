@@ -7,7 +7,7 @@ const browserSync = require('browser-sync').create();
 const sass = require ('gulp-sass');
 const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
-
+const autoprefixer = require('gulp-autoprefixer');
 // scripts
 const gulpWebpack = require('gulp-webpack');
 const webpack = require('webpack');
@@ -20,7 +20,6 @@ const svgSprite = require('gulp-svg-sprite');
 const svgmin = require('gulp-svgmin');
 const cheerio = require('gulp-cheerio');
 const replace = require('gulp-replace');
-
 
 const paths = {
     root: './build',
@@ -64,6 +63,10 @@ function styles() {
     return gulp.src('src/styles/app.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({ outputStyle: 'compressed' }))
+        .pipe(autoprefixer( {
+            browsers: ['>5%'],
+            cascade: false
+        }))
         .pipe(sourcemaps.write())
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest(paths.styles.dest));
@@ -111,7 +114,7 @@ function fonts() {
 
 // linter
 function lint() {
-    return gulp.src('src/scripts/app.js')
+    return gulp.src('src/scripts/*.js')
         .pipe(eslint())
         .pipe(eslint.format()) 
         .pipe(eslint.failAfterError());

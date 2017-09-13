@@ -4,4 +4,39 @@
 		display: inline-block;
 		list-style: none;
 	}
+	a {
+		text-decoration: none;
+		
+	}
+}
+
+.welcome {
+	.menu {
+		position: absolute;
+		bottom: 0;
+		display: flex;
+		width:100%;
+		margin: 0;
+		justify-content: space-between;
+	}
+
+	.menu_item {
+		@extend .buttons_bottom_item;
+	}
+
+	.menu_item a {
+		@extend .btn;
+	}
+}
+
+.main_footer {
+    .menu {
+		margin: 10px;
+        .menu_item {
+            padding: 20px;
+            a {
+                color: #fff;
+            }
+        }
+    }
 }

@@ -11,23 +11,39 @@
     <script src="./assets/scripts/bundle.js" defer></script>
   </head>
   <body>
-    <header>
-      <ul class="social_buttons">
-        <li class="social_bittons_item">VK</li>
-        <li class="social_bittons_item">GitHub</li>
-        <li class="social_bittons_item">unknow</li>
-      </ul>
-      <div class="menu">
-        <ul class="menu">
-          <li><a href="./index.html">Главная</a></li>
-          <li><a href="./about.html">Обо мне</a></li>
-          <li><a href="./my-works.html">Мои работы</a></li>
-          <li><a href="./blog.html">Блог</a></li>
+    <header class="main_header">
+      <div class="top_line">
+        <ul class="social_buttons">
+          <li class="social_buttons_item"><a href="https://vk.com/anja_kaa" alt="vk">
+              <svg class="icon" width="30" height="23">
+                <use xlink:href="./assets/images/sprite.svg#vk"></use>
+              </svg>VK </a></li>
+          <li class="social_buttons_item"><a href="https://github.com/VlaSovaAnna" alt="github">
+              <svg class="icon" width="30" height="23">
+                <use xlink:href="./assets/images/sprite.svg#github"></use>
+              </svg>GitHub </a></li>
+          <li class="social_buttons_item"><a href="#" alt="in">
+              <svg class="icon" width="30" height="23">
+                <use xlink:href="./assets/images/sprite.svg#in"></use>
+              </svg>IN </a></li>
         </ul>
+        <button class="hamburger"><span class="hamburger_lines"></span></button>
+        <div class="menu_wrap">
+          <ul class="menu">
+            <li class="menu_item"><a href="./index.html">Главная</a></li>
+            <li class="menu_item"><a href="./about.html">Обо мне</a></li>
+            <li class="menu_item"><a href="./my-works.html">Мои работы</a></li>
+            <li class="menu_item"><a class="last" href="./blog.html">Блог</a></li>
+          </ul>
+        </div>
       </div>
       <div class="main_photo"><img src="./assets/images/photo.jpg"></div>
       <div class="text_title">Анна Власова</div>
       <div class="text_subtitle">Личный сайт вебразработчика</div>
+      <svg class="triangle" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none">
+        <polygon class="left" points="0,0   0,86   500.8,86   500.8,75.5"></polygon>
+        <polygon class="right" points="1000,0   1000,86   500,86   500,75.5"></polygon>
+      </svg>
     </header>
     <h1>Обо мне</h1>
     <h2>Чем я могу быть полезна</h2>
@@ -35,20 +51,35 @@
     <h2>Кто я</h2>
     <h2>Чем я могу быть полезна</h2>
     <h2>Контакты</h2>
-    <div class="menu">
-      <ul class="menu">
-        <li><a href="./index.html">Главная</a></li>
-        <li><a href="./about.html">Обо мне</a></li>
-        <li><a href="./my-works.html">Мои работы</a></li>
-        <li><a href="./blog.html">Блог</a></li>
-      </ul>
+    <div class="main_footer"> 
+      <div class="row">
+        <div class="menu_wrap">
+          <ul class="menu">
+            <li class="menu_item"><a href="./my-works.html">Мои работы</a></li>
+            <li class="menu_item"><a href="./about.html">Обо мне</a></li>
+            <li class="menu_item"><a class="last" href="./blog.html">Блог</a></li>
+            <li class="menu_item"><a class="last" href="./index.html">Авторизация</a></li>
+          </ul>
+        </div>
+        <ul class="social_buttons">
+          <li class="social_buttons_item"><a href="https://vk.com/anja_kaa" alt="vk">
+              <svg class="icon" width="30" height="23">
+                <use xlink:href="./assets/images/sprite.svg#vk_round"></use>
+              </svg>VK </a></li>
+          <li class="social_buttons_item"><a href="https://github.com/VlaSovaAnna" alt="github">
+              <svg class="icon" width="30" height="23">
+                <use xlink:href="./assets/images/sprite.svg#github_round"></use>
+              </svg>GitHub </a></li>
+          <li class="social_buttons_item"><a href="#" alt="in">
+              <svg class="icon" width="30" height="23">
+                <use xlink:href="./assets/images/sprite.svg#in_round"></use>
+              </svg>IN </a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="text-description">Я начинающий вебразработчик, и этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool.</div>
+        <div class="copyright">&copy;Анна Власова | создано с любовью в LoftShcool | 2017</div>
+      </div>
     </div>
-    <ul class="social_buttons">
-      <li class="social_bittons_item">VK</li>
-      <li class="social_bittons_item">GitHub</li>
-      <li class="social_bittons_item">unknow</li>
-    </ul>
-    <div class="text-description">Написать что-то про себя</div>
-    <div class="copyright">Анна Власова | создано с любовью в LoftShcool | 2017</div>
   </body>
 </html>
