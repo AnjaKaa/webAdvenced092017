@@ -1,8 +1,10 @@
 section.welcome
-	.main_photo
-		img(src='./assets/images/photo.jpg')
-	.text_title Анна Власова
-	.text_subtitle Личный сайт вебразработчика
-	include ./socialButtons.pug
-	include ./menu.pug
-button.authorization_button Авторизоваться
+	.welcome__user.user
+		img.user__main-photo(src='./assets/images/photo.jpg')
+		.user__text-title Анна Власова
+		.user__text-subtitle Личный сайт вебразработчика
+	.welcome__social-buttons
+		include ./socialButtons.pug
+	.welcom__menu
+		include ./menu.pug
+button.authorization-button Авторизоваться

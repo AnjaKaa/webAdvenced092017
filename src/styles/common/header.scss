@@ -1,18 +1,19 @@
-.main_header {
+.main-header {
     position: relative;
     min-height: 615px;
     background: url(../images/background_mountains.jpg);
-	background-size: cover;	
+    background-size: cover;
+    text-align: center;	
 
 
-    .top_line {
+
+    &__top-row {
         display: flex;
         justify-content: space-between;
     }
 
 
-    .social_buttons {
-        margin:30px;
+    .main-header__social-buttons {
         padding: 0;
     }
 
@@ -27,50 +28,79 @@
         border: none;
         z-index: 4;
 
-        .hamburger_lines::before,
-        .hamburger_lines::after {
-            -webkit-transition-delay: 0, 0.3s;
-                transition-delay: 0, 1s;
+        &__lines::before,
+        &__lines::after {
+            transition-delay: 0, 1s;
         }
+    
+        .hamburger-line {
+            position: absolute;
+            z-index: 1;
+            width: 40px;
+            height: 5px;
+            border: none;
+            border-radius: 5px;
+            background: #fff;
+            -webkit-transition: 1s ease-out 0.3s;
+            transition: 1s ease-out 0.3s;
+        }
+
+        &__lines {
+        @extend .hamburger-line;
+            top: 15px;
+            left: 0;
+
+            &::before {   
+                @extend .hamburger-line;
+                    content: "";
+                    top: -15px;
+                    left: 0;
+                }
+            &::after {
+                @extend .hamburger-line;
+                content: "";
+                bottom: -15px;
+                left: 0;
+            }
+        }
+        
+        &_active {
+            .hamburger__lines {
+                background: none;
+
+                &::before {
+                    top: 0;
+                    -webkit-transform: rotate(-45deg);
+                        -ms-transform: rotate(-45deg);
+                            transform: rotate(-45deg);
+                }
+    
+                &::after {
+                    bottom: 0;
+                    -webkit-transform: rotate(45deg);
+                        -ms-transform: rotate(45deg);
+                            transform: rotate(45deg);
+                }
+            }
+    
+            &+.menu { 
+                display: block;
+                visibility: visible;
+                width: 100%;
+                .menu__item {
+                    visibility: visible;
+                }
+            }
+        }
+    
     }
 
 
-    .hamburger_line {
-        position: absolute;
-        z-index: 1;
-        width: 40px;
-        height: 5px;
-        border: none;
-        border-radius: 5px;
-        background: #fff;
-        -webkit-transition: 1s ease-out 0.3s;
-        transition: 1s ease-out 0.3s;
-    }
-    .hamburger_lines {
-       @extend .hamburger_line;
-        top: 15px;
-        left: 0;
-      
-    }
-
-    .hamburger_lines::before {   
-       @extend .hamburger_line;
-        content: "";
-        top: -15px;
-        left: 0;
-    }
-    .hamburger_lines::after {
-         @extend .hamburger_line;
-        content: "";
-        bottom: -15px;
-        left: 0;
-    }
-
-    .menu_wrap {
+    .menu {
+        display: none;
         visibility: hidden;
         position: absolute;  
         width: 0;
-        display: none;
         z-index: 3; 
         top: 0;
         right: 0;
@@ -78,28 +108,31 @@
         height: 100vh;
         -webkit-transition: 1s ease-out 0.1s;
         transition: 1s ease-out 0.1s;
-        li {
+        &__item {
             display: block;
             visibility: hidden;
             margin-top: 90px;
             color: #fff;
             text-align: center;
-            a {
-                display: inline-block;
-                position: relative;
-                font-family:BERNIERDistressed-Regular, sans-serif;
-                font-size: 63px;
-                line-height: 63px;
-                color: #fff;  
-            }
+        }
+        &__link {
+            display: inline-block;
+            width: auto;
+            position: relative;
+            font-family:BERNIERDistressed-Regular, sans-serif;
+            font-size: 63px;
+            line-height: 63px;
+            color: #fff;  
 
-            a:hover {
-                &::before, &::after {
+            &:hover {
+                &::before, 
+                &::after {
                     opacity: 1;
                 }
             }
             
-            a::before, a::after {
+            &::before, 
+            &::after {
                 content: "";
                 position: absolute;
                 top: 25px;
@@ -109,77 +142,44 @@
                 opacity: 0.3;
             }
             
-            
-            a::before {
+            &::before {
                 left:-43px;
             } 
             
-            a::after {
+            &::after {
                 right: -43px;
             }
         }
     }
 
-    .hamburger.active {
-        .hamburger_lines {
-            background: none;
+    .user {
+        &__text-title{
+            font-size: 35px;
+            line-height: 44px;
+            color: #fff;
         }
-
-        .hamburger_lines::before {
-            top: 0;
-            -webkit-transform: rotate(-45deg);
-                -ms-transform: rotate(-45deg);
-                    transform: rotate(-45deg);
-        }
-
-        .hamburger_lines::after {
-            bottom: 0;
-            -webkit-transform: rotate(45deg);
-                -ms-transform: rotate(45deg);
-                    transform: rotate(45deg);
-        }
-
-        &+.menu_wrap { 
-            display: block;
-            visibility: visible;
-            width: 100%;
-            li {
-                visibility: visible;
-            }
+        &__text-subtitle {
+            color: #fff;
         }
     }
 
-    .text_title{
-        font-size: 35px;
-        color: #fff;
-    }
-    .text_subtitle {
-        color: #fff;
-    }
-
-    &:after {
+    .arrow-down {
         content: "";
         position: absolute;
-        top: 550px;
+        top: 520px;
         left: 50%;
-        width: 10px;
-        height: 10px;
+        width: 19px;
+        height: 17px;
         transform: translateX(-50%) rotate(-45deg) ;
+        background: none;
+        border: none;
         border-left: 5px solid rgba(255,255,255,0.7);
         border-bottom: 5px solid rgba(255,255,255,0.7);
-
-    }
-
-    .triangle{
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        .left{
-            fill: #efeee9;
+        z-index: 3;
+        &:hover {
+            opacity: 0.5;
         }
+        
 
-        .right{
-            fill: #eeebdf;
-        }
     }
 }

@@ -1,39 +1,24 @@
 .authorization {
-    @extend .welcome;
+    @extend .center-panel;
     
 
-    .authorization_form { 
+    .authorization-form { 
         color: #455a64;
     }
 
-    .autorization_buttons{
-        @extend .buttons_bottom;
-        padding: 0;
-        li {
-            display: inline-block;
-            list-style: none;
-        }
-    }
-
-    .autorization_buttons button {
-        @extend .btn;
-        border:none;
-        width:100%;
-        font-family: 'Roboto-Medium', sans-serif;
-        font-size: 16px;
-    }
-    .autorization_login,
-    .autorization_password {
+ 
+    .authorization-form__login,
+    .authorization-form__password {
         vertical-align: top;
     }
 
-    label[for="login"],
-    label[for="password"] {
+    .auth_login__label,
+    .auth_password__label {
         font-size: 0;
     }
 
-    input[type=text],
-    input[type=password] {
+    .auth_login__input,
+    .auth_password__input {
         width: 295px;
         height: 45px;
         margin-bottom: 20px;
@@ -44,27 +29,27 @@
 
     }
 
-    input[type="checkbox"] {
+    .auth_checkbox__input {
         display: none;
     }
 
-    input[type="checkbox"]+label{
+    .auth_checkbox_label {
         position: relative;
         padding-left: 40px;
+  
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 18px;
+            height: 18px;
+            border: 1px solid  #d0d1d2;
+            border-radius: 3px;
+        }
     }
 
-    input[type="checkbox"]+label::before{
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 18px;
-        height: 18px;
-        border: 1px solid  #d0d1d2;
-        border-radius: 3px;
-    }
-
-    input[type="checkbox"]:checked+label::before{
+    .auth_checkbox__input:checked+.auth_checkbox_label::before{
         content: "";
         position: absolute;
         top: 0;
@@ -74,15 +59,14 @@
         background: #00bfa5;
     }
 
-    input[type="checkbox"]:checked+label::after{
+    .auth_checkbox__input:checked+label::after{
         content: "";
         position: absolute;
         top: 5px;
         left: 5px;
         width: 8px;
         height: 4px;
-        -webkit-transform: rotate(-45deg);
-                transform: rotate(-45deg);
+        transform: rotate(-45deg);
         border-left:  2px solid #fff;
         border-bottom: 2px solid #fff;
     }
@@ -91,12 +75,12 @@
         display: none;
     }
 
-    input[type="radio"]+label{
+    .auth_radio__label{
         position: relative;
         padding-left: 40px;
     }
 
-    input[type="radio"]+label::before{
+    .auth_radio__label::before{
         content: "";
         position: absolute;
         top: 0;
@@ -107,9 +91,7 @@
         border-radius: 50%;
     }
 
-
-
-    input[type="radio"]:checked+label::after{
+    .auth_radio__input:checked+.auth_radio__label::after{
         content: "";
         position: absolute;
         top: 5px;
@@ -118,6 +100,10 @@
         height: 10px;
         background: #00bfa5;
         border-radius: 50%;
+    }
+
+    .autorization__buttons{
+        padding: 0;
     }
 
 }

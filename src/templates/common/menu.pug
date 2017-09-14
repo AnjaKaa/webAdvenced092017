@@ -1,10 +1,21 @@
-.menu_wrap
-	ul.menu
-		li.menu_item
-			a(href="./index.html") Главная
-		li.menu_item
-			a(href="./about.html") Обо мне
-		li.menu_item
-			a(href="./my-works.html") Мои работы
-		li.menu_item
-			a.last(href="./blog.html") Блог
+nav.menu
+	ul.menu__list
+		-
+			var listMenu = [
+				{
+					link: './index.html',
+					title:'Главная'},
+				{
+					link: './about.html',
+					title:'Обо мне'},
+				{
+					link: './my-works.html',
+					title:' Мои работы'},
+				{
+					link: './blog.html',
+					title:'Блог'}
+			]
+		each item in listMenu
+			li.menu__item
+				a.menu__link(href=`${item.link}`) #{item.title}
+		

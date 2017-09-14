@@ -1,15 +1,19 @@
-header.main_header
-	.top_line
-		include ./socialButtons.pug
-		button.hamburger
-			span.hamburger_lines
-		include ./menu.pug
-	.main_photo
-		img(src='./assets/images/photo.jpg')
-	.text_title Анна Власова
-	.text_subtitle Личный сайт вебразработчика
+header.main-header
+	.main-header__top-row
+		.main-header__social-buttons
+			include ./socialButtons.pug
+		.main-header__menu
+			button(type="button").hamburger
+				span.hamburger__lines
+			include ./menu.pug
+	.main-header__user.user
+		img.user__main-photo(src='./assets/images/photo.jpg')
+		.user__text-title Анна Власова
+		.user__text-subtitle Личный сайт вебразработчика
+	button(type="button").arrow-down
 	
 	svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none")
 		polygon.left(points="0,0   0,86   500.8,86   500.8,75.5")
+	svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none")
 		polygon.right(points="1000,0   1000,86   500,86   500,75.5")
 

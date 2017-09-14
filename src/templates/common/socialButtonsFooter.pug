@@ -1,16 +1,20 @@
-ul.social_buttons
-	li.social_buttons_item
-		a(href='https://vk.com/anja_kaa' alt="vk")
-			svg.icon(width=30 height=23)
-				use(xlink:href='./assets/images/sprite.svg#vk_round')
-			|VK 
-	li.social_buttons_item
-		a(href='https://github.com/VlaSovaAnna' alt="github")
-			svg.icon(width=30 height=23)
-				use(xlink:href='./assets/images/sprite.svg#github_round')
-			|GitHub 
-	li.social_buttons_item
-		a(href='#' alt="in")
-			svg.icon(width=30 height=23)
-				use(xlink:href='./assets/images/sprite.svg#in_round')
-			|IN 
+ul.social-buttons
+	- 
+		var listSB = [
+				{
+					link: 'https://vk.com/anja_kaa',
+					title:'vk'
+				},
+				{
+					link: 'https://github.com/VlaSovaAnna',
+					title:'github'},
+				{
+					link: '#',
+					title:'in'}
+			]
+	each item in listSB
+		li.social-buttons__item
+			a.social-buttons__link(href=`${item.link}` alt=`${item.title}`)
+				svg.social-buttons__icon(width=30 height=23)
+					use(xlink:href='./assets/images/sprite.svg#'+`${item.title}`+'_round')
+				|#{item.title}

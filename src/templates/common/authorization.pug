@@ -1,23 +1,21 @@
 section.authorization.off
-	h2.title2 Авторизуйтесь
-	form.authorization_form
-		.autorization_login
-			label(for="login") Логин
-			input(type="text" name="login" id="login" placeholder="Логин")
-		.autorization_password
-			label(for="password") Пароль
-			input(type="password" name="password" id="password" placeholder="Пароль")
-		.autorization_checkbox
-			input(type="checkbox" name="checkbox" id="checkbox" checked)
-			label(for="checkbox") Я человек
-		.autorization_radio
+	h2.authorization__title.title2 Авторизуйтесь
+	form.authorization__form.authorization-form
+		.authorization-form__login.auth_login
+			label.auth_login__label(for="login") Логин
+			input.auth_login__input(type="text" name="login" id="login" placeholder="Логин")
+		.authorization-form___password.auth_password
+			label.auth_password__label(for="password") Пароль
+			input.auth_password__input(type="password" name="password" id="password" placeholder="Пароль")
+		.authorization-form___checkbox.auth_checkbox
+			input.auth_checkbox__input(type="checkbox" name="checkbox" id="checkbox" checked)
+			label.auth_checkbox_label(for="checkbox") Я человек
+		.authorization-form___radio.auth_radio
 			h3 Вы точно не робот?
-			input(type="radio" name="radio" id="radio1" checked)
-			label(for="radio1") Да
-			input(type="radio" name="radio" id="radio2" ) 
-			label(for="radio2") Нет
-		ul.autorization_buttons
-			li.buttons_bottom_item 
-				button.btn На главную
-			li.buttons_bottom_item 
-				button.btn.last Войти
+			input.auth_radio__input(type="radio" name="radio" id="radio1" checked)
+			label.auth_radio__label(for="radio1") Да
+			input.auth_radio__input(type="radio" name="radio" id="radio2" ) 
+			label.auth_radio__label(for="radio2") Нет
+		.authorization-form__buttons.btns-bottom
+			button.btns-bottom__item На главную
+			button.btns-bottom__item Войти
