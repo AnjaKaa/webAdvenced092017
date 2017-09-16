@@ -11,8 +11,10 @@ html
 		meta(content="ie=edge" http-equiv="x-ua-compatible")
 		link(rel='stylesheet' href='./assets/styles/app.min.css')
 		script(src='./assets/scripts/bundle.js' defer)
+		
 
 	body
 		include common/header.pug
 		block content
 		include common/footer.pug
+	script(async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap")

@@ -18,6 +18,8 @@
 
 .welcome {
 	.menu {
+		position: relative;
+		min-height: 40px;
 		&__list {
 			@extend .btns-bottom
 		}

@@ -1,109 +1,190 @@
 .authorization {
     @extend .center-panel;
     
+    &__title {
+        margin: 33px auto 15px;
+    }
 
     .authorization-form { 
         color: #455a64;
+        &__row {
+            position: relative;
+            vertical-align: top;
+            .btns-bottom{
+                
+                margin-top: 38px;
+                position: relative;
+            }
+        }
     }
 
- 
-    .authorization-form__login,
-    .authorization-form__password {
-        vertical-align: top;
+    .auth_login {
+        &__label {
+            font-size: 0;
+            visibility: hidden;
+        }
+
+        &__input-wrap {
+            position: relative;
+            width: 295px;
+            height: 42px;
+            margin: 0 auto;
+            margin-bottom: 5px;
+            padding-left: 45px;
+            border-radius: 5px;
+            color: #9b9ea0;
+           
+            overflow: hidden;
+        }
+
+        &__input{
+            display: block;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            padding-left: 25px;
+            border: none;
+        }
+
+        &__icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 15px;
+            height: 15px;
+            padding: 15px;
+            fill: #c4cbcd;
+            background: #f0efe9;
+        }
+    
+       
     }
 
-    .auth_login__label,
-    .auth_password__label {
+   .auth_password  {
+    &__label {
         font-size: 0;
+        visibility: hidden;
     }
 
-    .auth_login__input,
-    .auth_password__input {
+    &__input-wrap {
+        position: relative;
         width: 295px;
-        height: 45px;
+        height: 42px;
+        margin: 0 auto;
         margin-bottom: 20px;
-        padding-left: 60px;
-        border: none;
+        padding-left: 45px;
         border-radius: 5px;
         color: #9b9ea0;
+       
+        overflow: hidden;
+    }
+
+    &__input{
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        padding-left: 25px;
+        border: none;
+    }
+
+    &__icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 15px;
+        height: 15px;
+        padding: 15px;
+        fill: #c4cbcd;
+        background: #f0efe9;
+    }
 
     }
 
-    .auth_checkbox__input {
-        display: none;
+
+
+    .auth_checkbox {
+        &__input {
+            display: none;
+        }
+
+        &_label {
+            position: relative;
+            padding-left: 32px;
+    
+            &::before{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 20px;
+                height: 20px;
+                border: 1px solid  #d0d1d2;
+                border-radius: 3px;
+            }
+        }
+
+        &__input:checked+.auth_checkbox_label::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background: #00bfa5;
+        }
+
+        &__input:checked+label::after{
+            content: "";
+            position: absolute;
+            top: 6px;
+            left: 7px;
+            width: 8px;
+            height: 4px;
+            transform: rotate(-45deg);
+            border-left:  2px solid #fff;
+            border-bottom: 2px solid #fff;
+        }
     }
 
-    .auth_checkbox_label {
-        position: relative;
-        padding-left: 40px;
-  
-        &::before{
+    .auth_radio {
+        &__title {
+            margin-bottom: 10px;
+        }
+
+        &__input {
+            display: none;
+        }
+
+        &__label{
+            position: relative;
+            margin:0 20px;
+            padding-left: 30px;
+        }
+
+        &__label::before{
             content: "";
             position: absolute;
             top: 0;
             left: 0;
             width: 18px;
             height: 18px;
-            border: 1px solid  #d0d1d2;
-            border-radius: 3px;
+            border: 1px solid #d0d1d2;
+            border-radius: 50%;
         }
-    }
 
-    .auth_checkbox__input:checked+.auth_checkbox_label::before{
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 18px;
-        height: 18px;
-        background: #00bfa5;
-    }
-
-    .auth_checkbox__input:checked+label::after{
-        content: "";
-        position: absolute;
-        top: 5px;
-        left: 5px;
-        width: 8px;
-        height: 4px;
-        transform: rotate(-45deg);
-        border-left:  2px solid #fff;
-        border-bottom: 2px solid #fff;
-    }
-
-    input[type="radio"] {
-        display: none;
-    }
-
-    .auth_radio__label{
-        position: relative;
-        padding-left: 40px;
-    }
-
-    .auth_radio__label::before{
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 18px;
-        height: 18px;
-        border: 1px solid #d0d1d2;
-        border-radius: 50%;
-    }
-
-    .auth_radio__input:checked+.auth_radio__label::after{
-        content: "";
-        position: absolute;
-        top: 5px;
-        left: 5px;
-        width: 10px;
-        height: 10px;
-        background: #00bfa5;
-        border-radius: 50%;
-    }
-
-    .autorization__buttons{
-        padding: 0;
+        &__input:checked+.auth_radio__label::after{
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 10px;
+            height: 10px;
+            background: #00bfa5;
+            border-radius: 50%;
+        }
     }
 
 }

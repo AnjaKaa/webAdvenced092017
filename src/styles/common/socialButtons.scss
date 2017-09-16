@@ -1,13 +1,13 @@
 .social-buttons {
     list-style: none;
     padding: 0;
-    margin: 40px;
-    display: flex;
-    justify-content: flex-start;
-
     &__item {
-        margin-right: 26px;
+        display: inline-block;
+        margin-right: 24px;
         font-size: 0;
+        &:last-child {
+			margin: 0;
+		}
     }
 }
 
@@ -16,7 +16,7 @@
          &__icon {
             fill:#73d4c8;
             &:hover {
-                fill: #00bfa5;
+                fill: #40746C;
             }
         }
     }
@@ -24,7 +24,7 @@
 
 .main-header {
     .social-buttons {
-        margin: 35px;
+        margin: 30px 20px;
     }
 }
 
@@ -46,6 +46,8 @@
 
 .main_footer{
     .social-buttons {
+        display: flex;
+        justify-content: flex-start;
         &__icon {
             fill:#fff;
             opacity: 0.5;
