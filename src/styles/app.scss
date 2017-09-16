@@ -43,6 +43,7 @@ body {
 	}
 }
 
+
 .user{
 	&__text-title {
 		font-family: 'Roboto-Medium', sans-serif;
@@ -63,7 +64,7 @@ body {
 	&__main-photo{
 		width: 143px;
 		height: 143px;
-		margin-top: 40px;
+		margin-top: 65px;
 		margin-bottom: 9px;
 		border-radius: 50%;
 	}
@@ -162,6 +163,7 @@ body {
 	position: absolute;
 	top:0;
 	transform: translateY(-100%);
+	z-index: 3;
 
 	.left{
 		fill: #efeee9;
@@ -171,12 +173,14 @@ body {
 		fill: #eeebdf;
 	}
 	width: 50%;
+	z-index: 4;
 }
 
 .about-columns {
 	position: relative;
 	display: flex;
 	justify-content: space-between;
+	z-index: 5;
 
 	&__left,
 	&__right {
@@ -184,6 +188,15 @@ body {
 		flex-grow: 1;
 		&-title {
 			text-align: center;
+			&::before {
+				content: "";
+				width: 100%;
+				height: 100%;
+				position:absolute;
+				display: block;
+				z-index: 2;
+				opacity: 0.1;
+			}
 		}
 		&-content {
 			text-align: center;
@@ -207,12 +220,6 @@ body {
 	}		
 }
 
-.contacts {
-	position: relative;
-	width: 100%;
-	min-height: 974px;
-}
-
 .map {
 	width: 100%;
 	min-height: 974px;
@@ -220,6 +227,9 @@ body {
 }
 
 .contacts{
+	position: relative;
+	width: 100%;
+	min-height: 974px;
 	&__block {
 		@extend .center-panel;
 		padding-top: 10px;
@@ -259,6 +269,55 @@ body {
 
 	}
 }
+
+.about-wrap{
+	position: relative;
+	.main-header__user{
+		&::before {
+			background: url(../images/portfolio_header.svg);
+			background-position:  center bottom;
+            background-repeat: no-repeat;
+		}
+	}
+
+	.about-columns__left-title {
+		position: relative;
+		&::before {
+			background: url(../images/about_header.svg);
+			background-position:  center -20px;
+			background-size: 360px 120px;
+            background-repeat: no-repeat;
+		}
+	}
+}
+
+.my-works-wrap{
+	.main-header__user{
+		&::before {
+			background: url(../images/portfolio_header.svg);
+			background-position:  center bottom;
+            background-repeat: no-repeat;
+		}
+	}
+}
+
+
+.blog-wrap{
+	padding-bottom: 210px;
+	.main-header {
+		min-height: 400px;
+	}
+
+	.main-header__user{
+		&::before {
+			background: url(../images/blog_header.svg);
+			background-position:  center bottom;
+            background-repeat: no-repeat;
+		}
+	}
+
+}
+
 
 
 @import './common/socialButtons';

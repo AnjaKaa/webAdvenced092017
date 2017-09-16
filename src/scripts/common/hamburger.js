@@ -8,7 +8,6 @@ function hamburgerInit() {
     toggle.addEventListener( "click", function(e) {
       e.preventDefault();
       (this.classList.contains("hamburger_active") === true) ? this.classList.remove("hamburger_active") : this.classList.add("hamburger_active");
-
     });
   }
  
