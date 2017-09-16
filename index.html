@@ -34,7 +34,7 @@
                   </svg>in</a></li>
             </ul>
           </div>
-          <div class="welcom__menu">
+          <div class="welcome__menu">
             <nav class="menu">
               <ul class="menu__list">
                 <li class="menu__item"><a class="menu__link" href="./index.html">Главная</a></li>
@@ -49,28 +49,47 @@
         <section class="authorization off">
           <h2 class="authorization__title title3">Авторизуйтесь</h2>
           <form class="authorization__form authorization-form">
-            <div class="authorization-form__login auth_login">
-              <label class="auth_login__label" for="login">Логин</label>
-              <input class="auth_login__input" type="text" name="login" id="login" placeholder="Логин">
+            <div class="authorization-form__row">
+              <div class="auth_login">
+                <label class="auth_login__label" for="login">Логин</label>
+                <div class="auth_login__input-wrap">
+                  <svg class="auth_login__icon" width="30" height="23">
+                    <use xlink:href="./assets/images/sprite.svg#login"></use>
+                  </svg>
+                  <input class="auth_login__input" type="text" name="login" id="login" placeholder="Логин">
+                </div>
+              </div>
             </div>
-            <div class="authorization-form___password auth_password">
-              <label class="auth_password__label" for="password">Пароль</label>
-              <input class="auth_password__input" type="password" name="password" id="password" placeholder="Пароль">
+            <div class="authorization-form__ro">
+              <div class="auth_password">
+                <label class="auth_password__label" for="password">Пароль</label>
+                <div class="auth_password__input-wrap">
+                  <svg class="auth_password__icon" width="30" height="23">
+                    <use xlink:href="./assets/images/sprite.svg#password"></use>
+                  </svg>
+                  <input class="auth_password__input" type="password" name="password" id="password" placeholder="Пароль">
+                </div>
+              </div>
             </div>
-            <div class="authorization-form___checkbox auth_checkbox">
-              <input class="auth_checkbox__input" type="checkbox" name="checkbox" id="checkbox" checked>
-              <label class="auth_checkbox_label" for="checkbox">Я человек</label>
+            <div class="authorization-form__row">
+              <div class="auth_checkbox">
+                <input class="auth_checkbox__input" type="checkbox" name="checkbox" id="checkbox" checked>
+                <label class="auth_checkbox_label" for="checkbox">Я человек</label>
+              </div>
             </div>
-            <div class="authorization-form___radio auth_radio">
-              <h3>Вы точно не робот?</h3>
-              <input class="auth_radio__input" type="radio" name="radio" id="radio1" checked>
-              <label class="auth_radio__label" for="radio1">Да</label>
-              <input class="auth_radio__input" type="radio" name="radio" id="radio2">
-              <label class="auth_radio__label" for="radio2">Нет</label>
+            <div class="authorization-form__row">
+              <div class="auth_radio">
+                <h4 class="auth_radio__title">Вы точно не робот?</h4>
+                <input class="auth_radio__input" type="radio" name="radio" id="radio1" checked>
+                <label class="auth_radio__label" for="radio1">Да</label>
+                <input class="auth_radio__input" type="radio" name="radio" id="radio2">
+                <label class="auth_radio__label" for="radio2">Не уверен</label>
+              </div>
             </div>
-            <div class="authorization-form__buttons btns-bottom">
-              <button class="btns-bottom__item">На главную</button>
-              <button class="btns-bottom__item">Войти</button>
+            <div class="authorization-form__row">
+              <div class="btns-bottom"><a class="btns-bottom__item" href="./index.html" alt="Главная">На главную</a>
+                <button class="btns-bottom__item" type="submit">Войти</button>
+              </div>
             </div>
           </form>
         </section>
