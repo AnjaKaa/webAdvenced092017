@@ -1,6 +1,6 @@
 header.main-header
 	.main-header__bg
-		img.main-header__bg-img(src="./assets/images/background_mountains.jpg")
+		img.main-header__bg--img(src="./assets/images/background_mountains.jpg")
 	.main-header__container
 		.main-header__top-row
 			.main-header__social-buttons
@@ -9,8 +9,9 @@ header.main-header
 				button(type="button").hamburger
 					span.hamburger__lines
 				include ./menu.pug
-		.main-header__user.user
-			img.user__main-photo(src='./assets/images/photo.jpg')
-			.user__text-title Анна Власова
-			.user__text-subtitle Личный сайт вебразработчика
-		button(type="button").arrow-downs
+		.main-header__user
+			.user
+				img.user__main-photo(src='./assets/images/photo.jpg')
+				.user__text-title Анна Власова
+				.user__text-subtitle Личный сайт вебразработчика
+		button(type="button").main-header__arrow-downs

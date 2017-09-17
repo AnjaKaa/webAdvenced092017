@@ -1,7 +1,8 @@
 .welcome {
 	@extend .center-panel;
+	height: 100%;
 	&__user {
-
+		margin-top: 45px;
 	}
 	&__social-buttons {
 		padding: 18px;
@@ -10,10 +11,9 @@
 		margin-top: 6px;
 		display: block;
 	}
-}
-
-.welcome .main_photo {
-	z-index: 1;
+	.main_photo {
+		z-index: 1;
+	}
 }
 
 

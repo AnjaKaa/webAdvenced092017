@@ -60,10 +60,8 @@
     }
   }
    
-    &__content { 
-      max-height: 100vh;     
+    &__content {  
       padding:0 100px;  
-      overflow-y: auto;
       background:
         linear-gradient(white 30%, rgba(255,255,255,0)),
         linear-gradient(rgba(255,255,255,0), white 70%) 0 100%,

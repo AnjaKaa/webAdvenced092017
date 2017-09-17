@@ -9,13 +9,20 @@ body {
 	color: #455a64;
 }
 
+.flex-wrap-column {
+	display: flex;
+	flex-direction: column;
+}
+
 .center-panel {
 	width: 380px;
 	//min-height:400px;
-	position:absolute;
-	margin: -190px 0 0 -200px;
-	top: 50%;
-	left: 50%;
+	//position:absolute;
+	//margin: -190px 0 0 -200px;
+	//top: 50%;
+	//left: 50%;
+	margin: auto;
+	text-align: center;
 	border-radius: 5px;
 	overflow: hidden;
 	background: rgba(255,255,255,0.85);
@@ -26,19 +33,19 @@ body {
 	background: url(../images/background_mountains.jpg);
 	background-size: cover;	
 	&__wrap {
+		display: flex;
 		min-width: 100%;
 		min-height:  100vh;
-		text-align: center;
-		vertical-align: bottom;
 	}
 
 	&__copyright {
-		position: absolute;
-		bottom: 30px;
-		left: 50%; 
-		transform: translatex(-50%);
+		// position: absolute;
+		// bottom: 30px;
+		// left: 50%; 
+		// transform: translatex(-50%);
 		font-family: 'Roboto-Light', sans-serif;
 		font-size: 16px;
+		text-align: center;
 		color:#fff;
 	}
 }
@@ -49,6 +56,7 @@ body {
 		font-family: 'Roboto-Medium', sans-serif;
 		font-size: 28px;
 		line-height: 34px;
+		text-align: center;
 		color: #455a64;
 		opacity: 0.8;
 	}
@@ -57,14 +65,16 @@ body {
 		font-family: 'Roboto-Regular', sans-serif;
 		font-size: 16px;
 		line-height: 24px;
+		text-align: center;
 		color: #455a64;
 		opacity: 0.8;
 	}
 
 	&__main-photo{
+		display: block;
 		width: 143px;
 		height: 143px;
-		margin-top: 65px;
+		margin: auto;
 		margin-bottom: 9px;
 		border-radius: 50%;
 	}
@@ -275,7 +285,7 @@ body {
 	.main-header__user{
 		&::before {
 			background: url(../images/portfolio_header.svg);
-			background-position:  center bottom;
+			background-position:  center center;
             background-repeat: no-repeat;
 		}
 	}
@@ -295,7 +305,7 @@ body {
 	.main-header__user{
 		&::before {
 			background: url(../images/portfolio_header.svg);
-			background-position:  center bottom;
+			background-position:  center center;
             background-repeat: no-repeat;
 		}
 	}
@@ -304,14 +314,11 @@ body {
 
 .blog-wrap{
 	padding-bottom: 210px;
-	.main-header {
-		min-height: 400px;
-	}
 
 	.main-header__user{
 		&::before {
 			background: url(../images/blog_header.svg);
-			background-position:  center bottom;
+			background-position:  center center;
             background-repeat: no-repeat;
 		}
 	}

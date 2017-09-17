@@ -1,10 +1,10 @@
-extends ../templateMain
+extends ../template
 
 block variables
 	- var title='Добро пожаловать'
 
 block content
-	.index
+	.index.flex-wrap-column 
 		.index__wrap
 			include ../common/welcome.pug
 			include ../common/authorization.pug

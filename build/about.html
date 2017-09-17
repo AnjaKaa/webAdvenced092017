@@ -11,9 +11,9 @@
     <script src="./assets/scripts/bundle.js" defer></script>
   </head>
   <body>
-    <div class="about-wrap">
+    <div class="about-wrap flex-wrap-column"> 
       <header class="main-header">
-        <div class="main-header__bg"><img class="main-header__bg-img" src="./assets/images/background_mountains.jpg"></div>
+        <div class="main-header__bg"><img class="main-header__bg--img" src="./assets/images/background_mountains.jpg"></div>
         <div class="main-header__container">
           <div class="main-header__top-row">
             <div class="main-header__social-buttons">
@@ -44,11 +44,13 @@
               </nav>
             </div>
           </div>
-          <div class="main-header__user user"><img class="user__main-photo" src="./assets/images/photo.jpg">
-            <div class="user__text-title">Анна Власова</div>
-            <div class="user__text-subtitle">Личный сайт вебразработчика</div>
+          <div class="main-header__user">
+            <div class="user"><img class="user__main-photo" src="./assets/images/photo.jpg">
+              <div class="user__text-title">Анна Власова</div>
+              <div class="user__text-subtitle">Личный сайт вебразработчика</div>
+            </div>
           </div>
-          <button class="arrow-downs" type="button"></button>
+          <button class="main-header__arrow-downs" type="button"></button>
         </div>
       </header>
       <section class="about">
