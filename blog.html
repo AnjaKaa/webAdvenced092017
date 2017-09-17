@@ -11,9 +11,20 @@
     <script src="./assets/scripts/bundle.js" defer></script>
   </head>
   <body>
-    <div class="blog-wrap">
+    <div class="blog-wrap flex-wrap-column"> 
       <header class="main-header">
-        <div class="main-header__bg"><img class="main-header__bg-img" src="./assets/images/background_mountains.jpg"></div>
+        <div class="main-header__bg"><img class="main-header__bg--img" src="./assets/images/background_mountains.jpg"></div>
+        <div class="main-header__menu">
+          <button class="hamburger" type="button"><span class="hamburger__lines"></span></button>
+          <nav class="menu">
+            <ul class="menu__list">
+              <li class="menu__item"><a class="menu__link" href="./my-works.html"> Мои работы</a></li>
+              <li class="menu__item"><a class="menu__link" href="./blog.html">Блог</a></li>
+              <li class="menu__item"><a class="menu__link" href="./about.html">Обо мне</a></li>
+              <li class="menu__item"><a class="menu__link" href="./index.html">Авторизация</a></li>
+            </ul>
+          </nav>
+        </div>
         <div class="main-header__container">
           <div class="main-header__top-row">
             <div class="main-header__social-buttons">
@@ -32,25 +43,17 @@
                     </svg>in</a></li>
               </ul>
             </div>
-            <div class="main-header__menu">
-              <button class="hamburger" type="button"><span class="hamburger__lines"></span></button>
-              <nav class="menu">
-                <ul class="menu__list">
-                  <li class="menu__item"><a class="menu__link" href="./index.html">Главная</a></li>
-                  <li class="menu__item"><a class="menu__link" href="./about.html">Обо мне</a></li>
-                  <li class="menu__item"><a class="menu__link" href="./my-works.html"> Мои работы</a></li>
-                  <li class="menu__item"><a class="menu__link" href="./blog.html">Блог</a></li>
-                </ul>
-              </nav>
+          </div>
+          <div class="main-header__user">
+            <div class="user"><img class="user__main-photo" src="./assets/images/photo.jpg">
+              <div class="user__text-title">
+                <div class="title-bg"></div>
+                <div class="title2">Блог</div>
+              </div>
+              <div class="user__text-subtitle">Статьи, которые я написала</div>
             </div>
           </div>
-          <div class="main-header__user user"><img class="user__main-photo" src="./assets/images/photo.jpg">
-            <div class="user__text-title">
-              <div class="title2">Блог</div>
-            </div>
-            <div class="user__text-subtitle">Статьи, которые я написала</div>
-          </div>
-          <button class="arrow-downs" type="button"></button>
+          <button class="main-header__arrow-downs" type="button"></button>
         </div>
       </header>
       <div class="blog-triangle"> 
@@ -60,7 +63,9 @@
         </svg>
       </div>
       <div class="blog">
-        <ul class="blog__menu blog-menu"></ul>
+        <ul class="blog__menu">
+          <div class="blog-menu"></div>
+        </ul>
         <div class="blog__content">
           <div class="blog__text-block blog__text-block--active">
             <h3 class="blog__text-title">Заголовок 1</h3>
