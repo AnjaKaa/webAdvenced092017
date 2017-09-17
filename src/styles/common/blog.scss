@@ -27,6 +27,7 @@
   
 
     &__menu {
+      position: relative;
       min-width: 290px;
       max-width: 290px;
       list-style: none;
@@ -36,6 +37,8 @@
     }
 
     .blog-menu { 
+      //position: absolute;
+      top: 0;
       &__item {
       display: block;
       width: 220px;
@@ -62,20 +65,16 @@
    
     &__content {  
       padding:0 100px;  
-      background:
-        linear-gradient(white 30%, rgba(255,255,255,0)),
-        linear-gradient(rgba(255,255,255,0), white 70%) 0 100%,
-        radial-gradient(farthest-side at 50% 0, rgba(0,0,0,.2), rgba(0,0,0,0)),
-        radial-gradient(farthest-side at 50% 100%, rgba(0,0,0,.2), rgba(0,0,0,0)) 0 100%;
-      background-repeat: no-repeat;
-      background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
-      background-attachment: local, local, scroll, scroll;
       text-align: left;
     }
 
     &__text-block{
       padding: 70px 0;
       border-bottom: 5px solid #f1f1f2;
+
+      &:last-child {
+        border:none;
+      }
     
       &--active {
         color: #20c6af;
@@ -84,6 +83,7 @@
 
     &__text-title {
       display: inline-block;
+      margin-top: 0;
       font-family:BERNIERDistressed-Regular, sans-serif;
       font-size: 35px;
       line-height: 41px;

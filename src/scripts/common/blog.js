@@ -1,7 +1,8 @@
 function blogInit() {
 	var blog=document.querySelector('.blog__content');
   var listTextBlock=blog.querySelectorAll('.blog__text-block');
-  var menuBlog=document.querySelector('.blog__menu');
+  var menuBlogWrap=document.querySelector('.blog__menu');
+  var menuBlog=document.querySelector('.blog-menu');
 
 listTextBlock.forEach(function(item,i){ 
   //Добавляем пункты меню для каждого текстового блока в блоге
@@ -18,21 +19,29 @@ listTextBlock.forEach(function(item,i){
 });
 
 //обработчик события прокрутки блога
-blog.addEventListener('scroll', function(){
+document.addEventListener('scroll', function(){
   // по всем текстовым блокам блога
 	listTextBlock.forEach(function(item, i){
     // начало оболасти активности блока
-    var startActive=blog.scrollTop;
+    var startActive=window.pageYOffset;
     // конец области активности блока
-    var endActive=blog.scrollTop+450;
-      //если верхняя граница текстового блока сверху в верхних 100px блога, то блок активный
+    var endActive=startActive+100;
+    
+      //если верхняя граница текстового блока сверху в верхних 400px блога, то блок активный
   		if (startActive <= item.offsetTop && item.offsetTop < endActive) {
       	setActiveTextBlok(listTextBlock[i]);
+      }
+      if (menuBlogWrap.offsetTop< window.pageYOffset) {
+          menuBlog.style.position='fixed';
+       
+      }
+      else {
+        menuBlog.style.position='absolute';
       }
    });
 })
 
-// назначаем активный класс для бока и его пункта меню
+// назначаем активный класс для блока и его пункта меню
 function setActiveTextBlok(curTextBlock) {
   listTextBlock.forEach(function(item){
     if (item != curTextBlock){
