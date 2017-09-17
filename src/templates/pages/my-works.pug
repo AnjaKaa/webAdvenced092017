@@ -6,5 +6,47 @@ block variables
 block content
 	.my-works-wrap.flex-wrap-column 
 		include ../common/header.pug
-		h1 Мои работы
+		.my-works
+			.my-works__triangle 
+				svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none")
+					polygon.left(points="0,0   0,86   500.8,86   500.8,75.5")
+					polygon.right(points="1000,0   1000,86   500,86   500,75.5")
+			.my-works__title.my-works__title--works
+				.title-bg
+				h2.title2 Мои работы
+			.my-works__slider
+				include ../common/slider.pug
+			.my-works__title.my-works__title--feedback
+				.title-bg
+				h2.title2 Что обо мне<br> говорят
+			.my-works__feedback
+				.feedback
+					.feedback__bg
+						img.feedback__bg--img(src="./assets/images/bg_feedback.png")
+					.opinions
+						.opinions__item.opinion 
+							.opinion__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet unde ullam, reprehenderit ea ipsam necessitatibus corporis quo harum iusto itaque.
+							.opinion__subscribe
+								.opinion__img 
+									img.opinion__img--img(src="./assets/images/photo1.jpg")
+								.opinion__name <b>NAME</b><br> text
+						.opinions__item.opinion 
+							.opinion__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet unde ullam, reprehenderit ea ipsam necessitatibus corporis quo harum iusto itaque.
+							.opinion__subscribe
+								.opinion__img 
+									img.opinion__img--img(src="./assets/images/photo1.jpg")
+								.opinion__name <b>NAME</b><br> text
+					.feedback-form
+						.feedback-form__title.title3 Связаться со мной
+						form.feedback-form__form
+							.feedback-form__row
+								input.feedback-form__input(type="text" name="name" placeholder="Имя")
+							.feedback-form__row
+								input.feedback-form__input(type="text" name="email"  placeholder="Email")
+							.feedback-form__row
+								textarea.feedback-form__textarea(cols="50" rows="10"  placeholder="Ваше сообщение")
+							.feedback-form__row
+								.btns-bottom
+									button(type="submit").btns-bottom__item Отправить
+									button(type="reset").btns-bottom__item Очистить
 		include ../common/footer.pug

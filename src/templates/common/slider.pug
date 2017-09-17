@@ -1,0 +1,63 @@
+.slider
+    ul.slider__list
+        - 
+            var listSlides = [
+                    {
+                        title:'Проект 1',
+                        tags:'HTML , CSS, JAVASCRIPT',
+                        link: '#',
+                        img: '../assets/images/Example.png'
+                    },
+                    {
+                        title:'Проект 2',
+                        tags:'HTML , CSS, JAVASCRIPT',
+                        link: '#',
+                        img: '../assets/images/Example.png'
+                    },
+                    {
+                        title:'Проект 3',
+                        tags:'HTML , CSS, JAVASCRIPT',
+                        link: '#',
+                        img: '../assets/images/Example.png'
+                    },
+                    {
+                        title:'Проект 4',
+                        tags:'HTML , CSS, JAVASCRIPT',
+                        link: '#',
+                        img: '../assets/images/Example.png'
+                    },
+                    {
+                        title:'Проект 5',
+                        tags:'HTML , CSS, JAVASCRIPT',
+                        link: '#',
+                        img: './assets/images/Example.png'
+                    }
+
+                ]
+        each item,ndx in listSlides
+            case ndx
+                when 0
+                    li.slider__item.slider__item--active
+                        .slide
+                                .slide__description
+                                    .slide__title
+                                        h2.title2 #{item.title}
+                                    .slide__tags #{item.tags}
+                                    a.slide__link.btn(href=`${item.link}` alt=`${item.title}`) Посмотреть сайт
+                                .slide__img
+                                    img.slide__img--img(src=`${item.img}` width='100%' heigth='100%')
+                default
+                    li.slider__item
+                        .slide
+                            .slide__description
+                                .slide__title
+                                    h2.title2 #{item.title}
+                                .slide__tags #{item.tags}
+                                a.slide__link.btn(href=`${item.link}` alt=`${item.title}`) Посмотреть сайт
+                            .slide__img
+                                img(src=`${item.img}`)
+    .slider__buttons
+        button.slider__buttons--prev(type="button")
+        button.slider__buttons--next(type="button")
+
+

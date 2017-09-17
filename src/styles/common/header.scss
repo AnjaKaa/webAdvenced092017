@@ -35,9 +35,6 @@
         justify-content: space-between;
     }
 
-    
-
-
     &__social-buttons {
         padding: 0;
         .social-buttons {
@@ -72,7 +69,8 @@
 
 
     .hamburger {
-        position: relative;
+        position: absolute;
+        right: 5px;
         width: 40px;
         height: 40px;
         margin-top: 5px;
@@ -117,7 +115,7 @@
             }
         }
         
-        &_active {
+        &--active {
             .hamburger__lines {
                 background: none;
 
@@ -136,20 +134,13 @@
                 }
             }
     
-            &+.menu { 
-                display: block;
-                visibility: visible;
-                width: 100%;
-                
-                z-index: 5; 
-                .menu__item {
-                    visibility: visible;
-                }
-            }
         }
     
     }
 
+    &__menu {
+        height: 0;
+    }
 
     .menu {
         display: none;
@@ -162,6 +153,18 @@
         height: 100vh;
         -webkit-transition: 1s ease-out 0.1s;
         transition: 1s ease-out 0.1s;
+
+        &--active { 
+            position: fixed;
+            display: block;
+            visibility: visible;
+            width: 100%;
+            
+            z-index: 5; 
+            .menu__item {
+                visibility: visible;
+            }
+        }
         &__item {
             display: block;
             visibility: hidden;
@@ -217,7 +220,7 @@
         }
     }
 
-    .header__arrow-downs {
+    .main-header__arrow-downs {
         content: "";
         position: absolute;
         bottom: 100px;

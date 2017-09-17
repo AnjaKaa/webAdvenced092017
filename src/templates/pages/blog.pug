@@ -2,26 +2,28 @@ extends ../template
 
 block variables
 	- var title='Блог'
+
 block content
 	.blog-wrap.flex-wrap-column 
 		header.main-header
 			.main-header__bg
 				img.main-header__bg--img(src="./assets/images/background_mountains.jpg")
+			.main-header__menu
+				button(type="button").hamburger
+					span.hamburger__lines
+				include ../common/menu.pug
 			.main-header__container
 				.main-header__top-row
 					.main-header__social-buttons
 						include ../common/socialButtons.pug
-					.main-header__menu
-						button(type="button").hamburger
-							span.hamburger__lines
-						include ../common/menu.pug
 				.main-header__user
 					.user
 						img.user__main-photo(src='./assets/images/photo.jpg')
 						.user__text-title
+							.title-bg
 							.title2 Блог
 						.user__text-subtitle Статьи, которые я написала
-				button(type="button").main-heder__arrow-downs
+				button(type="button").main-header__arrow-downs
 		.blog-triangle 
 			svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none")
 				polygon.left(points="0,0   0,86   500.8,86   500.8,75.5")

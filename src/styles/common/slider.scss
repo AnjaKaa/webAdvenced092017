@@ -1,0 +1,144 @@
+.slider {
+    position: relative;
+    &__list {
+        list-style:none;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__item{
+        display: none;
+        &--active {
+            display: block;
+        }
+    }
+
+    .slide {
+        display: flex;
+
+        &__description {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 750px;
+            min-width: 50%;
+            flex-grow: 1;
+            text-align: center;
+            background: #f0efe9;
+        }
+
+        &__title {
+
+        }
+
+        &__tags {
+            margin: 0 85px;
+            padding: 20px;
+            color: #20b5a1;
+            border-top: 1px solid #20b5a1;
+            border-bottom: 1px solid #20b5a1;
+        }
+
+        &__link {
+            display: block;
+            margin: 50px auto;
+            padding: 13px;
+            padding-left: 47px;
+            padding-right: 20px;
+            color: #fff;
+            text-decoration: none;
+            background: #00bfa5 url(../images/link.svg) no-repeat 20px 15px;
+            border-radius: 5px;
+         
+
+        }
+        &__img {
+            padding: 100px 70px;
+            flex-grow: 1;
+            background: #efebe0;
+        }
+    }
+
+    &__buttons {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        min-width: 50%;
+        min-height: 225px;
+        display: flex;
+        justify-content: space-between;
+        &--prev {
+            position: relative;
+            display: block;
+            min-width: 50%;
+            background: url(../images/example.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position-y: center;
+            border:none;
+
+            &::before{
+                content: "";
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 0;
+                bottom:0;
+                right: 0;
+                background: rgba(241,237,225,0.8);
+                z-index: 1;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 0;
+                bottom:0;
+                right: 0;
+                background: url(../images/portf_arrow_down.svg);
+                background-repeat: no-repeat;
+                background-position: center center;
+                z-index: 2;
+
+            }
+            
+        }
+        &--next {
+            
+            position: relative;
+            display: block;
+            min-width: 50%;
+            background: url(../images/example.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position-y: center;
+            border:none;
+            &::before{
+                content: "";
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 0;
+                bottom:0;
+                right: 0;
+                background: rgba(227,221,208,0.8);
+                z-index: 1;
+            }
+
+            &::after{
+                content: "";
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 0;
+                bottom:0;
+                right: 0;
+                background: url(../images/portf_arrow_up.svg);
+                background-repeat: no-repeat;
+                background-position: center center;
+                z-index: 2;
+            }
+        }
+    }
+}
