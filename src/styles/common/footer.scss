@@ -2,6 +2,7 @@
     position: absolute;
     width: 100%;
     bottom: 0;
+    z-index: 2;
     background: rgba(55,62,66,0.85);
     color: #fff;
     &__row {

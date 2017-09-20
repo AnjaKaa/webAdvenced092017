@@ -53,9 +53,14 @@
 
         }
         &__img {
-            padding: 100px 70px;
-            flex-grow: 1;
+            display: flex;
+            min-width: 50%;
+            padding-bottom:225px;
             background: #efebe0;
+            &--img {
+                display: block;
+                margin:auto;
+            }
         }
     }
 
@@ -69,6 +74,7 @@
         justify-content: space-between;
         &--prev {
             position: relative;
+            cursor: pointer;
             display: block;
             min-width: 50%;
             background: url(../images/example.png);
@@ -80,7 +86,6 @@
             &::before{
                 content: "";
                 position: absolute;
-                display: block;
                 top: 0;
                 left: 0;
                 bottom:0;
@@ -100,13 +105,13 @@
                 background-repeat: no-repeat;
                 background-position: center center;
                 z-index: 2;
-
             }
             
         }
         &--next {
             
             position: relative;
+            cursor: pointer;
             display: block;
             min-width: 50%;
             background: url(../images/example.png);

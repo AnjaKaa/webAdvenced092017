@@ -105,26 +105,32 @@ body {
 	justify-content: space-between;
 	width: 100%;
 	margin: 0;
+	left:0;
 	bottom: 0;
 
 	&__item {
 		display: block;
-		padding: 13px;
 		background: rgba(0,191,165,0.85);
 		color:#fff;
 		border:none;
-        width:100%;
+		width:100%;
+		min-height: 45px;
+		line-height: 45px;
         font-family: 'Roboto-Medium', sans-serif;
 		font-size: 16px;
 		text-decoration: none;
+		cursor: pointer;
 		&:hover {
 			background: rgba(0,150,136,0.85);
 		}
 		border-left: 2px solid #74cac2;
+
 		&:first-child {
 			border: none;
 		}
+		
 	}
+	
 }
 
 
@@ -308,8 +314,6 @@ body {
 }
 
 .my-works-wrap{
-	
-	padding-bottom: 150px;
 	.main-header__user{
 		&::before {
 			background: url(../images/portfolio_header.svg);
@@ -333,12 +337,12 @@ body {
 
 		&__title {
 			position: relative;
-			display: block;
-			background:#faf8f0; 
+			display: block;; 
 			text-align: center;
 			padding: 50px;
 
 			&--works{
+				background:#faf8f0;
 				.title-bg {
 					background: url(../images/works_header.svg);
 					background-position:  center top;
@@ -351,12 +355,18 @@ body {
 					background-position:  center top;
 					background-repeat: no-repeat;
 				}
+				.title2 {
+					margin: 0;
+				}
 			}
 				
 		}
 
 		.opinions{
-			position: relative;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
 			display: flex;
 			justify-content: center;
 			z-index: 2;
@@ -366,16 +376,21 @@ body {
 
 			.opinion{
 				position: relative;
-				margin-top: 70px;
-				max-width: 350px;
+				margin-top: 50px;
+				padding: 10px;
+				max-width: 380px;
 
 				&::before {
+					content:"\f10d";
+					font-family: FontAwesome;
+					font-size: 36px;
+					opacity: 0.2;
 					position: absolute;
-					top: 0;
-					left: 0;
+					top: -45px;
+					left: 10px;
 				}
 				&__text {
-					margin-bottom: 25px;
+					margin-bottom: 40px;
 				}
 				&__img{
 					width: 78px;
@@ -408,28 +423,39 @@ body {
 			display: flex;
 			flex-direction: column;
 			width: 100%;
-			min-height: 1070px;
+			min-height: 800px;
+			padding: 120px 0;
 			z-index: 1;
+			background: url(../images/bg_feedback.png) no-repeat;
+			background-position: center -350px;
+			
 			&__bg {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				z-index: 1;
-				&--img {
-					position: relative;
-					width: 100%;
-					height: 100%;
-					z-index: 1;
+				
+				 
+				@extend .center-panel;
+				background: inherit;
+
+				&::before {
+					content:"";
+				 	position: absolute;
+				 	left: -5%;
+				 	top: -5%;
+				 	background: inherit;
+				 	background-position: center -650px;
+				 	box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.5);
+				 	filter: blur(5px);
+				 	width: 110%;
+				 	height: 110%;
 				}
 			}
 			&-form {
-				
+				background: inherit;
+				background-position: center -650px;
 				@extend .center-panel;
-
+				position: relative;
+				
 				&__title {
-					margin: 35px;
+					margin: 30px;
 				}
 				&__row {
 					position: relative;
@@ -451,22 +477,42 @@ body {
 					height: 42px;
 					margin: 0 auto;
 					margin-bottom: 20px;
-					padding-left: 25px;
+					padding-left: 18px;
 					border-radius: 5px;
 					color: #9b9ea0;
 					border: none;
 				}
 
 				&__textarea {
-					width: 295px;
-					padding-left: 25px;
+					width: 280px;
+					padding: 18px;
+					border: none;
 					border-radius: 5px;
+				}
+				.btns-bottom {
+					margin-top: 20px;
+		
 				}
 			}
 		}
+	}
+}
 
-
-		
+.arrow-up {
+	content: "";
+	position: absolute;
+	bottom: 200px;
+	left: 50%;
+	width: 17px;
+	height: 18px;
+	transform: translateX(-50%) rotate(135deg) ;
+	background: none;
+	border: none;
+	border-left: 5px solid rgba(255,255,255,0.7);
+	border-bottom: 5px solid rgba(255,255,255,0.7);
+	z-index: 2;
+	&:hover {
+		opacity: 0.5;
 	}
 }
 
@@ -474,7 +520,7 @@ body {
 
 
 .blog-wrap{
-	padding-bottom: 210px;
+	padding-bottom: 150px;
 	.user__text-title {
 		position: relative;
 	}

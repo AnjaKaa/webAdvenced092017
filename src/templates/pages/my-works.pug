@@ -21,8 +21,6 @@ block content
 				h2.title2 Что обо мне<br> говорят
 			.my-works__feedback
 				.feedback
-					.feedback__bg
-						img.feedback__bg--img(src="./assets/images/bg_feedback.png")
 					.opinions
 						.opinions__item.opinion 
 							.opinion__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet unde ullam, reprehenderit ea ipsam necessitatibus corporis quo harum iusto itaque.
@@ -37,16 +35,18 @@ block content
 									img.opinion__img--img(src="./assets/images/photo1.jpg")
 								.opinion__name <b>NAME</b><br> text
 					.feedback-form
-						.feedback-form__title.title3 Связаться со мной
-						form.feedback-form__form
-							.feedback-form__row
-								input.feedback-form__input(type="text" name="name" placeholder="Имя")
-							.feedback-form__row
-								input.feedback-form__input(type="text" name="email"  placeholder="Email")
-							.feedback-form__row
-								textarea.feedback-form__textarea(cols="50" rows="10"  placeholder="Ваше сообщение")
-							.feedback-form__row
-								.btns-bottom
-									button(type="submit").btns-bottom__item Отправить
-									button(type="reset").btns-bottom__item Очистить
+						.feedback__bg
+							.feedback-form__title.title3 Связаться со мной
+							form.feedback-form__form
+								.feedback-form__row
+									input.feedback-form__input(type="text" name="name" placeholder="Имя")
+								.feedback-form__row
+									input.feedback-form__input(type="text" name="email"  placeholder="Email")
+								.feedback-form__row
+									textarea.feedback-form__textarea(cols="50" rows="9"  placeholder="Ваше сообщение")
+								.feedback-form__row
+									.btns-bottom
+										button(type="submit").btns-bottom__item Отправить
+										button(type="reset").btns-bottom__item Очистить
+			.button(type="button").arrow-up
 		include ../common/footer.pug
