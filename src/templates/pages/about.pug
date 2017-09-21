@@ -37,7 +37,11 @@ block content
 					.about-columns__right-content
 						include ../common/skillsList.pug
 			.about__contacts.contacts
-				.contacts__map.map
+				.contacts__map.google-map
+					#google-container.google-map__container
+					#zoom-in.google-map__zoom-in
+					#zoom-out.google-map__zoom-out
+				script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNGhz5BDUHMR6ds84jkIo-kd3s9SEdsP0")
 				.contacts__block
 					h3.contacts__title
 						.title3 Контакты

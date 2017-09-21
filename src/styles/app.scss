@@ -228,11 +228,39 @@ body {
 	}		
 }
 
-.map {
+.google-map {
 	position: absolute;
 	width: 100%;
 	min-height: 974px;
-	background: rgba(0,150,136,0.85);
+	//background: rgba(0,150,136,0.85);
+	&__container{
+		position: relative;
+		min-height: 974px;
+	} 
+	&__zoom-in,
+	&__zoom-out{
+		position: relative;
+		width: 50px;
+		height: 50px;
+		margin: 10px;
+		cursor: pointer;
+		background: #61dac9;
+		border-radius: 50%;
+		&:before{
+			position: absolute;
+			color: #fff;
+			font-size: 32px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+	}
+	&__zoom-in:before{
+		content:"+";	
+	}
+	&__zoom-out:before{
+		content:"-";	
+	}
 }
 
 .contacts{
