@@ -171,51 +171,55 @@ function googleMapInit() {
         }
     ]
 
-    // Создание точки на карте
-    var mapOptions = {
-        center: new google.maps.LatLng(latitude, longitude),
-        zoom: mapZoom,
-        panControl: false,
-        zoomControl: false,
-        mapTypeControl: false,
-        streetViewControl: false,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        scrollwheel: false,
-        styles: style
+    var gm=document.getElementById('google-container');
+
+    if(gm) {
+        // Создание точки на карте
+        var mapOptions = {
+            center: new google.maps.LatLng(latitude, longitude),
+            zoom: mapZoom,
+            panControl: false,
+            zoomControl: false,
+            mapTypeControl: false,
+            streetViewControl: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            scrollwheel: false,
+            styles: style
+        }
+
+        // Инициализация карты
+        var map = new google.maps.Map(gm, mapOptions);
+
+        // Добавляем свой маркер местонахождения на карту (свою иконку)			
+        // var marker = new google.maps.Marker({
+        //     position: new google.maps.LatLng(latitude, longitude),
+        //     map: map,
+        //     visible: true,
+        //     icon: marker_url,
+        // });
+
+        //Добавляем свои иконки для кнопок увеличить/уменьшить на карту
+        function CustomZoomControl(controlDiv, map) { 
+            var controlUIzoomIn= document.getElementById('zoom-in'),
+                controlUIzoomOut= document.getElementById('zoom-out');
+                controlDiv.appendChild(controlUIzoomIn);
+                controlDiv.appendChild(controlUIzoomOut);
+        
+                //Делаем привязку для кнопок увеличить/уменьшить при клике
+                google.maps.event.addDomListener(controlUIzoomIn, 'click', function() {
+                    map.setZoom(map.getZoom()+1)
+                });
+                google.maps.event.addDomListener(controlUIzoomOut, 'click', function() {
+                    map.setZoom(map.getZoom()-1)
+                });
+        }
+
+        var zoomControlDiv = document.createElement('div');
+        var zoomControl = new CustomZoomControl(zoomControlDiv, map);
+
+        //Помещаем кнопки увеличить/уменьшить на карту в левый верхний угол
+        map.controls[google.maps.ControlPosition.LEFT_TOP].push(zoomControlDiv);
     }
-
-    // Инициализация карты
-    var map = new google.maps.Map(document.getElementById('google-container'), mapOptions);
-
-    // Добавляем свой маркер местонахождения на карту (свою иконку)			
-    // var marker = new google.maps.Marker({
-    //     position: new google.maps.LatLng(latitude, longitude),
-    //     map: map,
-    //     visible: true,
-    //     icon: marker_url,
-    // });
-
-    //Добавляем свои иконки для кнопок увеличить/уменьшить на карту
-    function CustomZoomControl(controlDiv, map) { 
-        var controlUIzoomIn= document.getElementById('zoom-in'),
-            controlUIzoomOut= document.getElementById('zoom-out');
-            controlDiv.appendChild(controlUIzoomIn);
-            controlDiv.appendChild(controlUIzoomOut);
-    
-            //Делаем привязку для кнопок увеличить/уменьшить при клике
-            google.maps.event.addDomListener(controlUIzoomIn, 'click', function() {
-                map.setZoom(map.getZoom()+1)
-            });
-            google.maps.event.addDomListener(controlUIzoomOut, 'click', function() {
-                 map.setZoom(map.getZoom()-1)
-            });
-    }
-
-    var zoomControlDiv = document.createElement('div');
-    var zoomControl = new CustomZoomControl(zoomControlDiv, map);
-
-    //Помещаем кнопки увеличить/уменьшить на карту в левый верхний угол
-    map.controls[google.maps.ControlPosition.LEFT_TOP].push(zoomControlDiv);
 }
 
 module.exports = googleMapInit;
