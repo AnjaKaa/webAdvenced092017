@@ -116,6 +116,7 @@
         }
         
         &--active {
+            position: fixed;
             .hamburger__lines {
                 background: none;
 
@@ -146,21 +147,44 @@
         display: none;
         visibility: hidden;
         position: absolute;  
-        width: 0;
+        width: 100%;
         top: 0;
-        right: 0;
-        background: rgba(0,191,165,0.87);
+        left: 0;
         height: 100vh;
         -webkit-transition: 1s ease-out 0.1s;
         transition: 1s ease-out 0.1s;
+
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 100%;
+            top: 0;
+            background: rgba(0,191,165,0.87);
+            transition: 10s;
+        }
+        &:before{
+            left: 0;
+        }
+        &:after {
+            right: 0;
+        }
+       
 
         &--active { 
             position: fixed;
             display: block;
             visibility: visible;
             width: 100%;
-            
             z-index: 5; 
+
+            &:before,
+            &:after {
+                width: 50%; 
+                z-index: -1; 
+            }
+
             .menu__item {
                 visibility: visible;
             }

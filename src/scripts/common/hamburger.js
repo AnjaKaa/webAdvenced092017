@@ -9,7 +9,6 @@ function hamburgerInit() {
     toggle.addEventListener( "click", function(e) {
       e.preventDefault();
       let menu=document.querySelector(".menu");
-      console.log(menu);
       (this.classList.contains("hamburger--active") === true) ? this.classList.remove("hamburger--active") : this.classList.add("hamburger--active");
       (menu.classList.contains("menu--active") === true) ? menu.classList.remove("menu--active") : menu.classList.add("menu--active");
     });

@@ -1,81 +1,79 @@
 ul.skills-list
-    - 
-        var skillsList=[
-            {
-                group:'Frontend',
-                skills: [
-                    {
-                        name:'HTML5',
-                        knowledge: 90
-                    },
-                    {
-                        name:'CSS',
-                        knowledge: 80
-                    },
-                    {
-                        name:'Javascript\n&jQuery',
-                        knowledge: 85
-                    }
-                ]    
-            },
-            {
-                group:'Backend',
-                skills: [
-                    {
-                        name:'PHP',
-                        knowledge: 30
-                    },
-                    {
-                        name:'mySQL',
-                        knowledge: 55
-                    },
-                    {
-                        name:'Node.js\n&npm',
-                        knowledge: 30
-                    },
+    //- - 
+    //-     var skillsList=[
+    //-         {
+    //-             group:'Frontend',
+    //-             skills: [
+    //-                 {
+    //-                     name:'HTML5',
+    //-                     knowledge: 90
+    //-                 },
+    //-                 {
+    //-                     name:'CSS',
+    //-                     knowledge: 80
+    //-                 },
+    //-                 {
+    //-                     name:'Javascript\n&jQuery',
+    //-                     knowledge: 85
+    //-                 }
+    //-             ]    
+    //-         },
+    //-         {
+    //-             group:'Backend',
+    //-             skills: [
+    //-                 {
+    //-                     name:'PHP',
+    //-                     knowledge: 30
+    //-                 },
+    //-                 {
+    //-                     name:'mySQL',
+    //-                     knowledge: 55
+    //-                 },
+    //-                 {
+    //-                     name:'Node.js\n&npm',
+    //-                     knowledge: 30
+    //-                 },
                   
-                    {
-                        name:'Mongo.bd',
-                        knowledge: 35
-                    }
-                ]    
-            },
-            {
-                group:'WorkFlow',
-                skills: [
-                    {
-                        name:'Git',
-                        knowledge: 70
-                    },
-                    {
-                        name:'Gulp',
-                        knowledge: 60
-                    },
-                    {
-                        name:'Webpack',
-                        knowledge: 50
-                    },
-                    {
-                        name:'Bower',
-                        knowledge: 30
-                    }
-                ]    
-            }
-        ]
-    each skillGroup in skillsList
-        li.skills-list__item
-            .skills-row
-                .skills-row__title #{skillGroup.group}
-                ul.skills-row__list
-                    each skill in skillGroup.skills
-                        li.skills-row__item
-                            .skill
-                                - var size = 115
-                                - var radius = 45;
-                                - var len = 2*3.14*radius
-                                - var part = len/100*(100-skill.knowledge);
-                                svg(width=size height=size viewBox="0 0 "+size+" "+size).skill__circle
-                                    circle(r=radius cx="50%" cy="50%").skill__base
-                                    circle(r=radius cx="50%" cy="50%" transform="rotate(-90 "+size/2+" "+size/2+")" 
-                                    stroke-dasharray = len stroke-dashoffset = len data-part=part).skill__sector
-                                .skill__title=skill.name
+    //-                 {
+    //-                     name:'Mongo.bd',
+    //-                     knowledge: 35
+    //-                 }
+    //-             ]    
+    //-         },
+    //-         {
+    //-             group:'WorkFlow',
+    //-             skills: [
+    //-                 {
+    //-                     name:'Git',
+    //-                     knowledge: 70
+    //-                 },
+    //-                 {
+    //-                     name:'Gulp',
+    //-                     knowledge: 60
+    //-                 },
+    //-                 {
+    //-                     name:'Webpack',
+    //-                     knowledge: 50
+    //-                 },
+    //-                 {
+    //-                     name:'Bower',
+    //-                     knowledge: 30
+    //-                 }
+    //-             ]    
+    //-         }
+    //-     ]
+    //- each skillGroup in skillsList
+    //-     li.skills-list__item.skills-row
+    //-         .skills-row__title #{skillGroup.group}
+    //-         ul.skills-row__list
+    //-             each skill in skillGroup.skills
+    //-                 li.skills-row__item.skill
+    //-                         - var size = 115
+    //-                         - var radius = 45;
+    //-                         - var len = 2*3.14*radius
+    //-                         - var part = len/100*(100-skill.knowledge);
+    //-                         svg(width=size height=size viewBox="0 0 "+size+" "+size).skill__circle
+    //-                             circle(r=radius cx="50%" cy="50%").skill__base
+    //-                             circle(r=radius cx="50%" cy="50%" transform="rotate(-90 "+size/2+" "+size/2+")" 
+    //-                             stroke-dasharray = len stroke-dashoffset = part data-part=part).skill__sector
+    //-                         .skill__title=skill.name
