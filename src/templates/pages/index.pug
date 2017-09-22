@@ -6,6 +6,11 @@ block variables
 block content
 	.index
 		.index__wrap.flex-wrap-column 
-			include ../common/welcome.pug
-			include ../common/authorization.pug
+			.center-panel
+				.center-panel__front
+					include ../common/welcome.pug
+				.center-panel__back
+					include ../common/authorization.pug
+			
+			button.authorization-button Авторизоваться
 			.index__copyright &copy;Анна Власова | создано с любовью в LoftShcool | 2017

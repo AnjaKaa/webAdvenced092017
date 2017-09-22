@@ -1,8 +1,10 @@
 .welcome {
-	@extend .center-panel;
+	//@extend .center-panel;
+
+	transition: 1s;
 	height: 100%;
 	&__user {
-		margin-top: 45px;
+		margin-top: 60px;
 	}
 	&__social-buttons {
 		padding: 18px;
