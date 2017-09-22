@@ -8,7 +8,6 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link rel="stylesheet" href="./assets/styles/app.min.css">
-    <script src="./assets/scripts/bundle.js" defer></script>
   </head>
   <body>
     <div class="blog-wrap flex-wrap-column"> 
@@ -17,10 +16,12 @@
         <div class="main-header__menu">
           <button class="hamburger" type="button"><span class="hamburger__lines"></span></button>
           <nav class="menu">
+            <!--.menu__before-->
+            <!--.menu__after-->
             <ul class="menu__list">
               <li class="menu__item"><a class="menu__link" href="./my-works.html"> Мои работы</a></li>
-              <li class="menu__item"><a class="menu__link" href="./blog.html">Блог</a></li>
               <li class="menu__item"><a class="menu__link" href="./about.html">Обо мне</a></li>
+              <li class="menu__item"><a class="menu__link" href="./blog.html">Блог</a></li>
               <li class="menu__item"><a class="menu__link" href="./index.html">Авторизация</a></li>
             </ul>
           </nav>
@@ -53,8 +54,8 @@
               <div class="user__text-subtitle">Статьи, которые я написала</div>
             </div>
           </div>
-          <button class="main-header__arrow-downs arrow-down" type="button"></button>
         </div>
+        <button class="main-header__arrow-downs arrow-down" type="button"></button>
       </header>
       <div class="blog-triangle"> 
         <svg class="triangle" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none">
@@ -171,6 +172,8 @@
       <div class="main-footer"> 
         <div class="main-footer__row">
           <nav class="menu">
+            <!--.menu__before-->
+            <!--.menu__after-->
             <ul class="menu__list">
               <li class="menu__item"><a class="menu__link" href="./my-works.html"> Мои работы</a></li>
               <li class="menu__item"><a class="menu__link" href="./about.html">Обо мне</a></li>
@@ -199,5 +202,6 @@
         </div>
       </div>
     </div>
+    <script src="./assets/scripts/bundle.js" defer></script>
   </body>
 </html>

@@ -8,7 +8,6 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link rel="stylesheet" href="./assets/styles/app.min.css">
-    <script src="./assets/scripts/bundle.js" defer></script>
   </head>
   <body>
     <div class="my-works-wrap flex-wrap-column"> 
@@ -17,10 +16,12 @@
         <div class="main-header__menu">
           <button class="hamburger" type="button"><span class="hamburger__lines"></span></button>
           <nav class="menu">
+            <!--.menu__before-->
+            <!--.menu__after-->
             <ul class="menu__list">
               <li class="menu__item"><a class="menu__link" href="./my-works.html"> Мои работы</a></li>
-              <li class="menu__item"><a class="menu__link" href="./blog.html">Блог</a></li>
               <li class="menu__item"><a class="menu__link" href="./about.html">Обо мне</a></li>
+              <li class="menu__item"><a class="menu__link" href="./blog.html">Блог</a></li>
               <li class="menu__item"><a class="menu__link" href="./index.html">Авторизация</a></li>
             </ul>
           </nav>
@@ -51,20 +52,20 @@
             </div>
           </div>
         </div>
-        <button class="main-header__arrow-downs arrow-down" type="button"></button>
       </header>
+      <button class="main-header__arrow-downs arrow-down" type="button"></button>
       <div class="my-works">
-        <div class="my-works__triangle"> 
-          <svg class="triangle" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none">
-            <polygon class="left" points="0,0   0,86   500.8,86   500.8,75.5"></polygon>
-            <polygon class="right" points="1000,0   1000,86   500,86   500,75.5"></polygon>
-          </svg>
-        </div>
-        <div class="my-works__title my-works__title--works">
-          <div class="title-bg"></div>
-          <h2 class="title2">Мои работы</h2>
-        </div>
         <div class="my-works__slider">
+          <div class="my-works__triangle"> 
+            <svg class="triangle" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none">
+              <polygon class="left" points="0,0   0,86   500.8,86   500.8,75.5"></polygon>
+              <polygon class="right" points="1000,0   1000,86   500,86   500,75.5"></polygon>
+            </svg>
+          </div>
+          <div class="my-works__title my-works__title--works">
+            <div class="title-bg"></div>
+            <h2 class="title2">Мои работы</h2>
+          </div>
           <div class="slider">
             <ul class="slider__list">
               <li class="slider__item slider__item--active">
@@ -86,7 +87,7 @@
                     </div>
                     <div class="slide__tags">HTML , CSS, JAVASCRIPT</div><a class="slide__link btn" href="#" alt="Проект 2">Посмотреть сайт</a>
                   </div>
-                  <div class="slide__img"><img src="./assets/images/Example.png"></div>
+                  <div class="slide__img"><img class="slide__img--img" src="./assets/images/Example.png" width="100%" heigth="100%"></div>
                 </div>
               </li>
               <li class="slider__item">
@@ -97,7 +98,7 @@
                     </div>
                     <div class="slide__tags">HTML , CSS, JAVASCRIPT</div><a class="slide__link btn" href="#" alt="Проект 3">Посмотреть сайт</a>
                   </div>
-                  <div class="slide__img"><img src="./assets/images/Example.png"></div>
+                  <div class="slide__img"><img class="slide__img--img" src="./assets/images/Example.png" width="100%" heigth="100%"></div>
                 </div>
               </li>
               <li class="slider__item">
@@ -108,7 +109,7 @@
                     </div>
                     <div class="slide__tags">HTML , CSS, JAVASCRIPT</div><a class="slide__link btn" href="#" alt="Проект 4">Посмотреть сайт</a>
                   </div>
-                  <div class="slide__img"><img src="./assets/images/Example.png"></div>
+                  <div class="slide__img"><img class="slide__img--img" src="./assets/images/Example.png" width="100%" heigth="100%"></div>
                 </div>
               </li>
               <li class="slider__item">
@@ -119,7 +120,7 @@
                     </div>
                     <div class="slide__tags">HTML , CSS, JAVASCRIPT</div><a class="slide__link btn" href="#" alt="Проект 5">Посмотреть сайт</a>
                   </div>
-                  <div class="slide__img"><img src="./assets/images/Example.png"></div>
+                  <div class="slide__img"><img class="slide__img--img" src="./assets/images/Example.png" width="100%" heigth="100%"></div>
                 </div>
               </li>
             </ul>
@@ -180,6 +181,8 @@
       <div class="main-footer"> 
         <div class="main-footer__row">
           <nav class="menu">
+            <!--.menu__before-->
+            <!--.menu__after-->
             <ul class="menu__list">
               <li class="menu__item"><a class="menu__link" href="./my-works.html"> Мои работы</a></li>
               <li class="menu__item"><a class="menu__link" href="./about.html">Обо мне</a></li>
@@ -208,5 +211,6 @@
         </div>
       </div>
     </div>
+    <script src="./assets/scripts/bundle.js" defer></script>
   </body>
 </html>
