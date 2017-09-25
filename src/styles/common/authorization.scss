@@ -1,5 +1,8 @@
 .authorization {
-    //@extend .center-panel;
+    display: flex;
+	flex-direction:column;
+    justify-content: flex-end;
+    height: 100%;
     &__title {
         margin: 33px auto 15px;
     }
@@ -34,6 +37,10 @@
             color: #9b9ea0;
            
             overflow: hidden;
+
+            @include tablet {
+                width: 200px;
+            }
         }
 
         &__input{
@@ -77,6 +84,10 @@
         color: #9b9ea0;
        
         overflow: hidden;
+        
+        @include tablet {
+            width: 200px;
+        }
     }
 
     &__input{

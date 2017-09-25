@@ -8,6 +8,7 @@ const sass = require ('gulp-sass');
 const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
+const cssunit = require('gulp-css-unit');
 // scripts
 const gulpWebpack = require('gulp-webpack');
 const webpack = require('webpack');
@@ -66,6 +67,10 @@ function styles() {
         .pipe(autoprefixer( {
             browsers: ['>5%'],
             cascade: false
+        }))
+        .pipe(cssunit({
+            type: 'px-to-rem',
+            rootSize: 16
         }))
         .pipe(sourcemaps.write())
         .pipe(rename({ suffix: '.min' }))

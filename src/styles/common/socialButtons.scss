@@ -44,10 +44,13 @@
 }
 
 
-.main_footer{
+.main-footer{
     .social-buttons {
         display: flex;
         justify-content: flex-start;
+        @include tablet {
+            margin: 5px;
+        }
         &__icon {
             fill:#fff;
             opacity: 0.5;

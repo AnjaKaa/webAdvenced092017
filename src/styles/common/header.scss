@@ -8,6 +8,7 @@
         height: 100%;
         position:absolute;
         display: block;
+        min-width: 1800px;
         overflow: hidden;
 
         &--img {
@@ -33,6 +34,12 @@
     &__top-row {
         display: flex;
         justify-content: space-between;
+        // @include large-screen {
+            
+        //     min-width: 1200px;
+        //     max-width: 1200px;
+        //     margin: auto;
+        // }
     }
 
     &__social-buttons {
@@ -78,6 +85,10 @@
         background: transparent;
         border: none;
         z-index: 6;
+
+        // @include large-screen {
+        //     margin-right: 340px;
+        // }
 
         &__lines::before,
         &__lines::after {
@@ -205,6 +216,11 @@
             line-height: 63px;
             color: #fff;  
 
+            @include phone {
+                font-size: 35px;
+                line-height: 43px;
+            }
+
             &:hover {
                 &::before, 
                 &::after {
@@ -221,6 +237,9 @@
                 height: 5px;
                 background: #fff;
                 opacity: 0.3;
+                @include phone {
+                    top: 15px;
+                }
             }
             
             &::before {
@@ -235,8 +254,8 @@
 
     .user {
         &__text-title{
-            font-size: 35px;
-            line-height: 44px;
+           // font-size: 35px;
+            //line-height: 44px;
             color: #fff;
         }
         &__text-subtitle {
@@ -244,21 +263,22 @@
         }
     }
 
-    .arrow-down {
-        content: "";
-        position: absolute;
-        bottom: 100px;
-        left: 50%;
-        width: 18px;
-        height: 17px;
-        transform: translateX(-50%) rotate(-45deg) ;
-        background: none;
-        border: none;
-        border-left: 5px solid rgba(255,255,255,0.7);
-        border-bottom: 5px solid rgba(255,255,255,0.7);
-        z-index: 4;
-        &:hover {
-            opacity: 0.5;
-        }
+    
+}
+.arrow-down {
+    content: "";
+    position: absolute;
+    top: 90vh;
+    left: 50%;
+    width: 18px;
+    height: 17px;
+    transform: translateX(-50%) rotate(-45deg) ;
+    background: none;
+    border: none;
+    border-left: 5px solid rgba(255,255,255,0.7);
+    border-bottom: 5px solid rgba(255,255,255,0.7);
+    z-index: 4;
+    &:hover {
+        opacity: 0.5;
     }
 }

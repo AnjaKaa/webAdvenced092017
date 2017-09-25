@@ -35,24 +35,46 @@
 		&__link {
 			display: inline-block;
 			
-			padding:0 31px;
+			padding: 0 31px;
 			white-space: nowrap;
 			color: inherit;
+			@include tablet {
+				padding: 0 26px;
+			}
+			@include phone {
+				font-size: 14px;
+				padding: 0 22px;
+			}
 		}
 	}
 }
 
 .main-footer {
     .menu {
+		font-size: 16px;
+		@include phone {
+			font-size: 13px;
+		}
 		&__list{
 			margin: 10px;
 			display: flex;
 			justify-content: flex-start;
+			@include phone {
+				margin:0;
+			}
 		}
 
         &__item {
 			padding: 20px; 
 			flex-grow: 1;
+			@include tablet {
+				
+				padding: 5px 20px; 
+			}
+			@include phone {
+				
+				padding: 5px; 
+			}
 		}
 
 		&__link {

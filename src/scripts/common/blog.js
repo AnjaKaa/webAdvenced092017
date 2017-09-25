@@ -10,20 +10,37 @@ function blogInit() {
         listTextBlock.forEach(function(item, i) { 
         // Добавляем пункты меню для каждого текстового блока в блоге
             item.id = 'text'+(i+1).toString();
+
+            let link = document.createElement('a');
+            link.setAttribute('name', item.id);
+            item.appendChild(link);
+
             let newLi = document.createElement('li');
 
             newLi.classList.add('blog-menu__item');
             newLi.id = 'menu-'+item.id;
-            newLi.innerText=item.querySelector('.blog__text-title').innerText;  
+
+            let newLiLink = document.createElement('a');
+
+            newLiLink.classList.add('blog-menu__link');
+            newLiLink.setAttribute('href', '#'+item.id);
+            newLiLink.innerText=item.querySelector('.blog__text-title').innerText; 
+            newLiLink.addEventListener('click', ()=>{ setActiveTextBlok(item);console.log('link'); })
+            newLi.appendChild(newLiLink); 
             // первый пункт активный
             if (i==0) {
                 newLi.classList.add('blog-menu__item--active');
             }
+            
             menuBlog.appendChild(newLi);
         });
        
         // высота последнего элемента равна высоте списка заголовков
-        listTextBlock[listTextBlock.length-1].style.minHeight=menuBlog.clientHeight+'px';
+        if (menuBlog.clientHeight==0) {
+            listTextBlock[listTextBlock.length-1].style.minHeight='70vh';
+        } else {
+            listTextBlock[listTextBlock.length-1].style.minHeight=menuBlog.clientHeight+'px';
+        }
 
         // обработчик события прокрутки блога
         document.addEventListener('scroll', function() {
@@ -54,13 +71,41 @@ function blogInit() {
                 //удаляем активный класс у всех остальных текстовых блоков
                 item.classList.remove('blog__text-block--active');
                 document.querySelector('#menu-'+item.id).classList.remove('blog-menu__item--active');
-            }
-        });
-        // добавляем активный класс к текущему текстовому блоку
-        curTextBlock.classList.add('blog__text-block--active');  
-        document.querySelector('#menu-'+curTextBlock.id).classList.add('blog-menu__item--active');
+                }
+            });
+            
+            // добавляем активный класс к текущему текстовому блоку
+            curTextBlock.classList.add('blog__text-block--active');  
+            document.querySelector('#menu-'+curTextBlock.id).classList.add('blog-menu__item--active');
           
         }
+
+        let buttonMenu = document.querySelector('.button-menu');
+        let menuWrap = document.querySelector('.blog-wrap__menu-tablet');
+        let menuTablet = document.querySelector('.blog-menu-tablet');
+
+        buttonMenu.addEventListener('click', function() {
+            
+            if (menuWrap.classList.contains('blog-wrap__menu-tablet--active')) {
+                menuWrap.classList.remove('blog-wrap__menu-tablet--active');
+                this.classList.remove('button-menu--active');
+                menuBlog.innerHTML=menuTablet.innerHTML;
+                menuTablet.innerHTML='';
+            } else {
+                menuWrap.classList.add('blog-wrap__menu-tablet--active');
+                this.classList.add('button-menu--active');
+                menuTablet.innerHTML=menuBlog.innerHTML;
+                menuBlog.innerHTML='';
+            }
+            
+        });
+
+        menuWrap.addEventListener('click', function() {
+            this.classList.remove('blog-wrap__menu-tablet--active');
+            buttonMenu.classList.remove('button-menu--active');
+            menuBlog.innerHTML=this.innerHTML;
+            menuTablet.innerHTML='';
+        });
     }
 
 }

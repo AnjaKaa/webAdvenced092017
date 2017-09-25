@@ -4,10 +4,10 @@ function arrowDownsInit() {
 
     if (btnUp || btnDown ) {
         if (btnDown) {
-            scroll(btnDown,'down');
+            scroll(btnDown, 'down');
         }
         if (btnUp) {
-            scroll(btnUp,'up');
+            scroll(btnUp, 'up');
         }
     }
 
@@ -18,7 +18,7 @@ function arrowDownsInit() {
             // window.scrollTo(0, window.innerHeight)
             var speed = 0.5, // скорость
                 startScroll =  window.pageYOffset, // начальная позиция, текущее положение сколла
-                finishScroll = (direction=='down') ? window.innerHeight : -window.pageYOffset, // положение элемента по Y относительно окна браузера
+                finishScroll = (direction=='down') ? window.innerHeight : window.innerHeight-window.pageYOffset, // положение элемента по Y относительно окна браузера
                 start = null; // тут будем считать затраченное время
 
             function step(time) {

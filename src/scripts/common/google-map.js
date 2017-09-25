@@ -1,171 +1,171 @@
 function googleMapInit() {
     // Местоположение: долгота, широта и коэффициент увеличения
 
-     var latitude = 55.769,
-         longitude = 37.677,
-         mapZoom = 13;
+    var latitude = 55.769,
+        longitude = 37.677,
+        mapZoom = 13;
         
     // Стили для разных элементов на карте       
     var style = [
         {
-            "featureType": "water",
-            "elementType": "geometry",
-            "stylers": [
+            'featureType': 'water',
+            'elementType': 'geometry',
+            'stylers': [
                 {
-                    "color": "#61dac9"
+                    'color': '#61dac9'
                 },
                 {
-                    "lightness": 17
+                    'lightness': 17
                 }
             ]
         },
         {
-            "featureType": "landscape",
-            "elementType": "geometry",
-            "stylers": [
+            'featureType': 'landscape',
+            'elementType': 'geometry',
+            'stylers': [
                 {
-                    "color": "#ffffff"
+                    'color': '#ffffff'
                 },
                 {
-                    "lightness": 20
+                    'lightness': 20
                 }
             ]
         },
         {
-            "featureType": "road.highway",
-            "elementType": "geometry.fill",
-            "stylers": [
+            'featureType': 'road.highway',
+            'elementType': 'geometry.fill',
+            'stylers': [
                 {
-                    "color": "#dedede"
+                    'color': '#dedede'
                 },
                 {
-                    "lightness": 17
+                    'lightness': 17
                 }
             ]
         },
         {
-            "featureType": "road.highway",
-            "elementType": "geometry.stroke",
-            "stylers": [
+            'featureType': 'road.highway',
+            'elementType': 'geometry.stroke',
+            'stylers': [
                 {
-                    "color": "#dedede"
+                    'color': '#dedede'
                 },
                 {
-                    "lightness": 29
+                    'lightness': 29
                 },
                 {
-                    "weight": 0.2
+                    'weight': 0.2
                 }
             ]
         },
         {
-            "featureType": "road.arterial",
-            "elementType": "geometry",
-            "stylers": [
+            'featureType': 'road.arterial',
+            'elementType': 'geometry',
+            'stylers': [
                 {
-                    "color": "#dedede"
+                    'color': '#dedede'
                 },
                 {
-                    "lightness": 18
+                    'lightness': 18
                 }
             ]
         },
         {
-            "featureType": "road.local",
-            "elementType": "geometry",
-            "stylers": [
+            'featureType': 'road.local',
+            'elementType': 'geometry',
+            'stylers': [
                 {
-                    "color": "#ffffff"
+                    'color': '#ffffff'
                 },
                 {
-                    "lightness": 16
+                    'lightness': 16
                 }
             ]
         },
         {
-            "featureType": "poi",
-            "elementType": "geometry",
-            "stylers": [
+            'featureType': 'poi',
+            'elementType': 'geometry',
+            'stylers': [
                 {
-                    "color": "#f1f1f1"
+                    'color': '#f1f1f1'
                 },
                 {
-                    "lightness": 21
+                    'lightness': 21
                 }
             ]
         },
         {
-            "elementType": "labels.text.stroke",
-            "stylers": [
+            'elementType': 'labels.text.stroke',
+            'stylers': [
                 {
-                    "visibility": "on"
+                    'visibility': 'on'
                 },
                 {
-                    "color": "#ffffff"
+                    'color': '#ffffff'
                 },
                 {
-                    "lightness": 16
+                    'lightness': 16
                 }
             ]
         },
         {
-            "elementType": "labels.text.fill",
-            "stylers": [
+            'elementType': 'labels.text.fill',
+            'stylers': [
                 {
-                    "saturation": 36
+                    'saturation': 36
                 },
                 {
-                    "color": "#333333"
+                    'color': '#333333'
                 },
                 {
-                    "lightness": 40
+                    'lightness': 40
                 }
             ]
         },
         {
-            "elementType": "labels.icon",
-            "stylers": [
+            'elementType': 'labels.icon',
+            'stylers': [
                 {
-                    "visibility": "off"
+                    'visibility': 'off'
                 }
             ]
         },
         {
-            "featureType": "transit",
-            "elementType": "geometry",
-            "stylers": [
+            'featureType': 'transit',
+            'elementType': 'geometry',
+            'stylers': [
                 {
-                    "color": "#f2f2f2"
+                    'color': '#f2f2f2'
                 },
                 {
-                    "lightness": 19
+                    'lightness': 19
                 }
             ]
         },
         {
-            "featureType": "administrative",
-            "elementType": "geometry.fill",
-            "stylers": [
+            'featureType': 'administrative',
+            'elementType': 'geometry.fill',
+            'stylers': [
                 {
-                    "color": "#fefefe"
+                    'color': '#fefefe'
                 },
                 {
-                    "lightness": 20
+                    'lightness': 20
                 }
             ]
         },
         {
-            "featureType": "administrative",
-            "elementType": "geometry.stroke",
-            "stylers": [
+            'featureType': 'administrative',
+            'elementType': 'geometry.stroke',
+            'stylers': [
                 {
-                    "color": "#fefefe"
+                    'color': '#fefefe'
                 },
                 {
-                    "lightness": 17
+                    'lightness': 17
                 },
                 {
-                    "weight": 1.2
+                    'weight': 1.2
                 }
             ]
         }
@@ -218,7 +218,7 @@ function googleMapInit() {
         var zoomControl = new CustomZoomControl(zoomControlDiv, map);
 
         //Помещаем кнопки увеличить/уменьшить на карту в левый верхний угол
-        map.controls[google.maps.ControlPosition.LEFT_TOP].push(zoomControlDiv);
+        map.controls[google.maps.ControlPosition.LEFT_CENTER].push(zoomControlDiv);
     }
 }
 

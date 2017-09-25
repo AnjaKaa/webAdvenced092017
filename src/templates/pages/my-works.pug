@@ -7,19 +7,19 @@ block content
 	.my-works-wrap.flex-wrap-column 
 		include ../common/header.pug
 		.my-works
-			.my-works__triangle 
-				svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none")
-					polygon.left(points="0,0   0,86   500.8,86   500.8,75.5")
-					polygon.right(points="1000,0   1000,86   500,86   500,75.5")
-			.my-works__title.my-works__title--works
-				.title-bg
-				h2.title2 Мои работы
 			.my-works__slider
+				.my-works__triangle 
+					svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none")
+						polygon.left(points="0,0   0,86   500.8,86   500.8,75.5")
+						polygon.right(points="1000,0   1000,86   500,86   500,75.5")
+				.my-works__title.my-works__title--works
+					.title-bg
+					h2.title2 Мои работы
 				include ../common/slider.pug
-			.my-works__title.my-works__title--feedback
-				.title-bg
-				h2.title2 Что обо мне<br> говорят
 			.my-works__feedback
+				.my-works__title.my-works__title--feedback
+					.title-bg
+					h2.title2 Что обо мне говорят
 				.feedback
 					.opinions
 						.opinions__item.opinion 
@@ -43,7 +43,7 @@ block content
 								.feedback-form__row
 									input.feedback-form__input(type="text" name="email"  placeholder="Email")
 								.feedback-form__row
-									textarea.feedback-form__textarea(cols="50" rows="9"  placeholder="Ваше сообщение")
+									textarea.feedback-form__textarea(cols="50" rows="7"  placeholder="Ваше сообщение")
 								.feedback-form__row
 									.btns-bottom
 										button(type="submit").btns-bottom__item Отправить

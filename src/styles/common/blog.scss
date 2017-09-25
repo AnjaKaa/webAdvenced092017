@@ -1,4 +1,24 @@
 .blog-wrap {
+  position: relative;
+  display: flex;
+  padding-bottom: 160px;
+  @include tablet {
+    padding-bottom: 245px;
+  }
+  @include phone {
+    padding-bottom: 262px;
+  }
+
+  .user__text-title {
+		position: relative;
+	}
+	.title-bg {
+		background: url(../images/blog_header.svg);
+		background-position:  center center;
+		background-size: 320px 180px;
+		background-repeat: no-repeat;
+	}
+
   .user__main-photo {
     margin-top: 0;
   }
@@ -34,6 +54,10 @@
       font-family: Roboto, sans-serif;
       font-size: 16px;
       text-align: right;
+      
+      @include tablet {
+        display: none;
+      }
     }
 
     .blog-menu { 
@@ -43,8 +67,7 @@
       display: block;
       width: 220px;
       padding: 20px;
-    
-
+  
       &--active {
         position:relative;
         font-weight: bold;
@@ -58,19 +81,40 @@
           height: 100%;
           width: 3px;
           background-color: #20c6af;
+          }
         }
       }
+      &__link
+      {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: inherit;
+      }
     }
-  }
    
     &__content {  
       padding:0 100px;  
       text-align: left;
+      @include large-screen {
+        margin-right: 320px;
+      }
+      @include tablet{
+        padding:0 25px;  
+      }
+      @include phone{
+        padding:0 10px;  
+      }
     }
 
     &__text-block{
       padding: 70px 0;
       border-bottom: 5px solid #f1f1f2;
+
+      @include phone {
+        padding: 30px 0;
+      }
 
       &:last-child {
         border:none;
@@ -88,11 +132,91 @@
       font-size: 35px;
       line-height: 41px;
       color: #455a64;
+
+      @include phone {
+        font-size: 21px;
+        line-height: 28px;
+        margin-bottom: 15px;
+      }
+
     }
 
     &__text-date {
       margin-bottom: 25px;
       color: #20c6af;
+      @include phone {
+        margin-bottom: 15px;
+      }
+    }
+  }
+  .button-menu{
+    position: fixed;
+    display: none;
+    width: 60px;
+    height: 60px;
+    top: 50vh;
+    transform: translateY(-50%);
+    left:-50px;
+    background: #20c6af;
+    border: none;
+    border-radius: 50%;
+    //box-shadow:  0 0 3px rgba(0,0,0,0.5);
+    z-index: 1;
+    @include tablet {
+      display: block;
+    }
+    &--active {
+      left: 235px;
+    }
+
+    
+  }
+
+  .blog-wrap__menu-tablet {
+    position: relative;
+    width: 0;
+    background: #20c6af;
+    z-index: 2;
+    
+    //box-shadow:  0 0 3px rgba(0,0,0,0.5);
+
+    &--active {
+      min-width: 285px;
+      transition: 1s;
+    }
+
+    .blog-menu-tablet{
+      list-style: none;
+      padding: 0;
+      color: #fff;
+      position:fixed;
+      top: 50%;
+      transform: translateY(-50%);
+
+      @include phone {
+        top: 0;
+        transform: none;
+      }
+      .blog-menu__item {
+          display: block;
+          width: 220px;
+          padding: 20px;
+          opacity: 0.5;
+          text-align: right;
+  
+          &--active {
+            font-weight: bold;
+            opacity: 1;
+          }
+      }
+      .blog-menu__link
+      {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: inherit;
+      }
     }
   }
 }

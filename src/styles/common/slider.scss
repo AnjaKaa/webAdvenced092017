@@ -1,5 +1,10 @@
 .slider {
-    position: relative;
+    .slider-wrap{
+        position: relative;
+    }
+    @include phone {
+        position: static;
+    }
     &__list {
         list-style:none;
         margin: 0;
@@ -15,28 +20,58 @@
 
     .slide {
         display: flex;
+        @include tablet {
+            flex-wrap: wrap;
+        }
 
         &__description {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            min-height: 750px;
+            min-height: 630px;
             min-width: 50%;
             flex-grow: 1;
             text-align: center;
             background: #f0efe9;
+            @include tablet {
+                order: 2;
+                min-width: 100%;
+                min-height: 270px;
+            }
+
+            @include phone{
+                min-height: 200px;
+
+            }
         }
 
         &__title {
+            margin: 0 125px; 
 
         }
 
         &__tags {
             margin: 0 85px;
             padding: 20px;
+            font-family: 'Roboto-Medium', sans-serif;
+            font-size: 16px;
             color: #20b5a1;
             border-top: 1px solid #20b5a1;
             border-bottom: 1px solid #20b5a1;
+            
+            @include tablet {
+                margin: 0 200px;
+                padding: 15px;
+            }
+
+            @include phone {
+                margin: 0;
+                font-size: 14px;
+                line-height: 14px;
+                padding: 8px;
+            }
+
+
         }
 
         &__link {
@@ -45,21 +80,52 @@
             padding: 13px;
             padding-left: 47px;
             padding-right: 20px;
+            font-family: 'Roboto-Medium', sans-serif;
+            font-size: 16px;
             color: #fff;
             text-decoration: none;
             background: #00bfa5 url(../images/link.svg) no-repeat 20px 15px;
             border-radius: 5px;
+
+            @include tablet {
+                margin: 20px auto;
+            }
+
+            @include phone {
+                font-size: 14px;
+                line-height: 14px;
+            }
          
 
         }
         &__img {
             display: flex;
-            min-width: 50%;
-            padding-bottom:225px;
+            min-width: 40%;
+            padding:100px 5% 225px;
             background: #efebe0;
             &--img {
                 display: block;
                 margin:auto;
+            }
+
+            @include large-screen {
+                
+                min-width: 30%;
+                padding: 30px 10% 225px;
+            }
+
+            @include tablet {
+                order: 1;
+                min-width: 80%;
+                min-height: 380px;
+                max-height: 380px;
+                padding: 105px  10% 45px;
+            }
+            
+            @include phone {
+                min-height: 160px;
+                max-height: 240px;
+                padding: 40px  10% 40px;
             }
         }
     }
@@ -72,6 +138,14 @@
         min-height: 225px;
         display: flex;
         justify-content: space-between;
+        @include tablet {
+            position: static;
+            min-width: 100%;
+        }
+        @include phone {
+            min-height: 95px;
+            max-height: 95px;
+        }
         &--prev {
             position: relative;
             cursor: pointer;
@@ -90,7 +164,7 @@
                 left: 0;
                 bottom:0;
                 right: 0;
-                background: rgba(241,237,225,0.8);
+                background: rgba(181,180,175,0.5);
                 z-index: 1;
             }
             &::after{
@@ -109,7 +183,6 @@
             
         }
         &--next {
-            
             position: relative;
             cursor: pointer;
             display: block;
@@ -127,7 +200,7 @@
                 left: 0;
                 bottom:0;
                 right: 0;
-                background: rgba(227,221,208,0.8);
+                background: rgba(134,131,115,0.5);
                 z-index: 1;
             }
 

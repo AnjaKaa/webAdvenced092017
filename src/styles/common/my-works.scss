@@ -1,0 +1,321 @@
+.my-works-wrap{
+	.main-header__user{
+		&::before {
+			background: url(../images/portfolio_header.svg);
+			background-position:  center center;
+			background-size: contain;
+			background-repeat: no-repeat;
+			
+			@include tablet {
+				display: none;
+			}
+		}
+	}
+	.my-works{
+		&__triangle { 
+			position: relative;
+			width: 100%;
+		
+			.triangle{
+				width: 100%;
+				.left,
+				.right {
+					fill:#faf8f0;
+				}
+			}
+		}
+
+		&__title {
+			position: relative;
+			display: block;
+			text-align: center;
+			//padding: 50px;
+
+			@include large-screen {
+				padding: 40px 0 0 0;
+			}
+
+			@include tablet {
+				
+				margin-bottom: -35px;
+			}
+
+			@include phone {
+				padding: 16px;
+			}
+
+			&--works{
+				background:#faf8f0;
+				.title-bg {
+					background: url(../images/works_header.svg);
+					background-position:  center top;
+					background-size: contain;
+					background-repeat: no-repeat;
+				}
+			}
+			&--feedback{
+				margin-bottom: -190px;
+				margin-top: 60px;
+				@include tablet {
+					padding-top: 30px;
+				}
+				.title-bg {
+					background: url(../images/about_header.svg);
+					background-position:  center top;
+					background-size: contain;
+					background-repeat: no-repeat;
+				}
+				.title2 {
+					margin: 0;
+				}
+			}
+				
+		}
+
+		.opinions{
+			position: relative;
+			top: 0;
+			left: 0;
+			width: 100%;
+			margin-top: 130px;
+			display: flex;
+			justify-content: center;
+			z-index: 2;
+			
+			@include tablet {
+				margin-top: 0;
+			}
+
+			@include phone {
+				flex-direction: column;
+				justify-content: flex-start;
+				margin-top: 30px;
+			}
+
+			&__item {
+
+			}
+
+			.opinion{
+				position: relative;
+				margin-top: 50px;
+				padding: 10px;
+				max-width: 380px;
+				min-height: 180px;
+				max-height: 180px;
+
+				@include tablet {
+					padding:0 20px;
+				}
+				
+				@include phone {
+					min-height: 150px;
+					max-height: 150px;
+				}
+
+				&::before {
+					content:"\f10d";
+					font-family: FontAwesome;
+					font-size: 36px;
+					opacity: 0.2;
+					position: absolute;
+					top: -45px;
+					left: 10px;
+
+					@include phone {
+						left: 50%;
+						transform: translateX(-50%);
+					}
+				}
+				&__text {
+					margin-bottom: 40px;
+					@include phone {
+						margin-bottom: 20px;
+					}
+				}
+				&__img{
+					width: 78px;
+					height: 78px;
+					border-radius: 50%;
+					overflow: hidden;
+					&--img{
+						
+						width: 100%;
+						height: 100%;
+					}
+
+					@include phone {
+						width: 50px;
+						height: 50px;
+					}
+				}
+
+				&__subscribe{
+					display: flex;
+					justify-content: flex-start;
+				}
+				&__name {
+					flex-grow: 1;
+					display: block;
+					margin: auto;
+					padding-left: 24px;
+					color: #20b5a1;
+				}
+			}
+		}
+
+		.feedback{
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			min-height: 1050px;
+			padding: 120px 0;
+			z-index: 1;
+			background: url(../images/bg_feedback.png) no-repeat;
+			background-position: center -90px;
+			
+			
+			@include large-screen {
+				//background-size: cover;
+				background-position: center -90px;
+			}
+			@include tablet {
+				
+				min-height: 935px;
+				padding: 160px 0;
+				background-position: center -180px;
+			}
+			@include phone {
+				
+				min-height: 1050px;
+				//padding: 160px 0;
+				background-position: center 0;
+			}
+			
+			&__bg {
+				 
+				@extend .center-panel;
+				min-height: 400px;
+				background: inherit;
+
+				@include tablet {
+					width: 350px;
+					
+				}
+				@include phone {
+					width: 300px;
+					
+				}
+
+				&::before {
+					content:"";
+				 	position: absolute;
+				 	left: -5%;
+				 	top: -5%;
+				 	background: inherit;
+				 	background-position: center -620px;
+				 	box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.5);
+				 	filter: blur(5px);
+				 	width: 110%;
+					height: 110%;
+
+					@include tablet {
+						background: inherit;
+				 		background-position: center -600px;
+					}
+
+					@include phone {
+						background: inherit;
+						background-position: center -620px;
+				    }
+				}
+			}
+			&-form {
+				margin-top: 50px;
+				background: inherit;
+				background-position: center -550px;
+				@extend .center-panel;
+				min-height: 400px;
+				
+				@include tablet {
+					width: 350px;
+					
+				}
+				@include phone {
+					width: 300px;
+					
+				}
+				
+				&__title {
+					margin: 30px;
+					@include tablet {
+						margin: 30px 0 10px;
+					}
+					@include phone {
+						margin: 10px 0 20px;
+					}
+				}
+				&__row {
+					position: relative;
+					vertical-align: top;
+					.btns-bottom{
+						
+						margin-top: 38px;
+						position: relative;
+					}
+
+					@include tablet{
+						width: 100%;
+					}
+				}
+				&__label {
+					font-size: 0;
+					visibility: hidden;
+				}
+		
+				&__input {
+					position: relative;
+					width: 320px;
+					height: 42px;
+					margin: 0 auto;
+					margin-bottom: 20px;
+					padding-left: 18px;
+					border-radius: 5px;
+					color: #9b9ea0;
+					border: none;
+					
+					@include tablet {
+						width: 290px;
+					}
+					@include phone {
+						width: 250px;
+						
+					}
+				}
+
+				&__textarea {
+					width: 300px;
+					padding: 18px;
+					border: none;
+					border-radius: 5px;
+
+					@include large-screen {
+						rows: 12;
+					} 
+					@include tablet {
+						width: 270px;
+					}
+					@include phone {
+						width: 230px;
+						
+					}
+				}
+				.btns-bottom {
+					margin-top: 20px;
+		
+				}
+			}
+		}
+	}
+}

@@ -173,7 +173,10 @@ function skillsInint() {
 }
 
 function load(item) {
+    var anim = true;
+
     function heandler() {
+        
         var speed = 0.5, // скорость
             startLoad = item.getAttribute('stroke-dashoffset'), // начальная позиция
             finishLoad = item.dataset.part, // положение элемента 

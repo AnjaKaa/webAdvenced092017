@@ -1,11 +1,11 @@
 header.main-header
 	.main-header__bg
 		img.main-header__bg--img(src="./assets/images/background_mountains.jpg")
-	.main-header__menu
+	.main-header__menu.container
 		button(type="button").hamburger
 			span.hamburger__lines
 		include ./menu.pug
-	.main-header__container
+	.main-header__container.container
 		.main-header__top-row
 			.main-header__social-buttons
 				include ./socialButtons.pug
@@ -14,4 +14,4 @@ header.main-header
 				img.user__main-photo(src='./assets/images/photo.jpg')
 				.user__text-title Анна Власова
 				.user__text-subtitle Личный сайт вебразработчика
-	button(type="button").main-header__arrow-downs.arrow-down
+button(type="button").main-header__arrow-downs.arrow-down

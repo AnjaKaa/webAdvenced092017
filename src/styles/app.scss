@@ -1,4 +1,10 @@
 @import './common/fonts';
+@import './common/mixins';
+
+
+html{
+	font-size: 16px;	
+}
 
 body {
 	position: relative;
@@ -7,21 +13,108 @@ body {
 	font-family: 'Roboto-Regular', sans-serif;
 	font-size: 16px;
 	color: #455a64;
+	@include tablet {
+		font-size: 14px;
+	}
+}
+
+.container {
+	position: relative;
+	max-width: 1800px;
+	height: 100%;
+	max-height: 900px;
+	margin: auto;
+}
+
+
+
+.title2 {
+	display: inline-block;
+	position: relative;
+	max-width: 400px;
+    margin: 15px 0;
+	font-family:BERNIERDistressed-Regular, sans-serif;
+	font-size: 63px;
+	line-height: 66px;
+	color: #455a64;
+
+    @include tablet {
+		margin-bottom: 10px;
+		font-size: 49px;
+		line-height: 52px;
+		min-height: 80px;
+	}
+
+	@include phone {
+		max-width: 160px;
+		margin-bottom: 0;
+		font-size: 35px;
+		line-height: 42px;
+		min-height: 60px;
+	}
+
+
+	&::before, &::after {
+		content: "";
+		position: absolute;
+		top: 30px;
+		width: 22px;
+		height: 5px;
+		background: #d0d2d2;
+		@include tablet {
+			top: 25px;
+		}	
+		@include phone {
+			top: 20px;
+		}
+	}
+
+	&::before {
+		left:-43px;
+	} 
+
+	&::after {
+		right: -43px;
+	}
+}
+
+.title3 {
+	@extend .title2;
+	min-height: 30px;
+	font-size: 35px;
+	line-height: 41px;
+	margin-bottom: 10px;
+	&::before,
+	&::after {
+		top: 18px;
+		@include tablet {
+			top: 12px;
+		}
+	}
+	@include tablet {
+		font-size: 30px;
+		line-height: 36px;
+	}
+
+	@include phone {
+		font-size: 21px;
+		line-height: 28px;
+	}
 }
 
 .flex-wrap-column {
+	position: relative;
 	display: flex;
 	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	min-width: 320px;
 }
 
 .center-panel {
 	position: relative;
 	width: 380px;
-	min-height:408px;
-	//position:absolute;
-	//margin: -190px 0 0 -200px;
-	//top: 50%;
-	//left: 50%;
+	min-height:405px;
 	margin: auto;
 	text-align: center;
 	border-radius: 5px;
@@ -29,7 +122,17 @@ body {
 	background: rgba(255,255,255,0.85);
 	z-index:10;
 	transform-style: preserve-3d; /* Вращение в 3D */
-    transition: 0.5s; 
+	transition: 0.5s; 
+	
+	@include tablet {
+		width: 350px;
+		min-height:405px;
+	}
+
+	@include phone {
+		width: 300px;
+		min-height:405px;
+	}
 
 	&--rotate {
 		transform: rotateY(180deg);
@@ -44,7 +147,7 @@ body {
 		transform-style: preserve-3d;
 		position: absolute; /* Абсолютное позиционирование */
 		width: 100%;
-		height:100%; /* Задаём так равную высоту */
+		height: 100%; /* Задаём так равную высоту */
 	
 
 	}
@@ -89,12 +192,18 @@ body {
 		text-align: center;
 		color: #455a64;
 		opacity: 0.8;
+
+		@include phone {
+			font-size: 21px;
+			line-height: 28px;
+		}
+
+		
+		
 	}
 
 	&__text-subtitle {
 		font-family: 'Roboto-Regular', sans-serif;
-		font-size: 16px;
-		line-height: 24px;
 		text-align: center;
 		color: #455a64;
 		opacity: 0.8;
@@ -107,6 +216,8 @@ body {
 		margin: auto;
 		margin-bottom: 9px;
 		border-radius: 50%;
+
+		
 	}
 }
 
@@ -116,14 +227,26 @@ body {
 		text-align: left;
 		padding-bottom: 40px;
 	}
-}
 
+	@include phone {
+		padding: 0;
+
+		&__text {
+			padding-bottom: 10px;
+		}
+	}
+}
 
 
 .main_photo__big img {
 	width: 380px;
 	height: 380px;
 	margin-bottom: 25px;
+
+	@include phone {
+		width: 100%;
+		height: auto;
+	}
 }
 
 .btns-bottom { 
@@ -161,52 +284,11 @@ body {
 }
 
 
-
-.title2 {
-	display: inline-block;
-	position: relative;
-	width: auto;
-	margin-top: 0;
-	font-family:BERNIERDistressed-Regular, sans-serif;
-	font-size: 63px;
-	line-height: 66px;
-	color: #455a64;
-
-
-	&::before, &::after {
-		content: "";
-		position: absolute;
-		top: 30px;
-		width: 22px;
-		height: 5px;
-		background: #d0d2d2;
-	}
-
-	&::before {
-		left:-43px;
-	} 
-
-	&::after {
-		right: -43px;
-	}
-}
-
-.title3 {
-	@extend .title2;
-	font-size: 35px;
-	line-height: 41px;
-	margin-bottom: 10px;
-	&::before,
-	&::after {
-		top: 18px;
-	}
-}
-
 .triangle{
 	position: absolute;
-	top:0;
+	top: 2px;
 	transform: translateY(-100%);
-	z-index: 3;
+	z-index: 1;
 
 	.left{
 		fill: #efeee9;
@@ -216,26 +298,54 @@ body {
 		fill: #eeebdf;
 	}
 	width: 50%;
-	z-index: 4;
+	
+}
+
+.triangle-tablet {
+	@extend .triangle;
+	width: 100%;
+	display: none;
 }
 
 .about-columns {
 	position: relative;
 	display: flex;
 	justify-content: space-between;
-	z-index:4 ;
 
+	@include tablet {
+		flex-direction: column;
+		.triangle{
+			display: none;
+			&-tablet {
+				display: block;
+			}
+		}
+		
+	}
+	
 	&__left,
 	&__right {
 		max-width: 50%;
 		flex-grow: 1;
+		@include tablet {
+			padding-top: 40px;
+		}
+		@include phone {
+			padding-top: 20px;
+		}
 		&-title {
 			text-align: center;
-	
+
+			@include phone {
+				padding: 0;
+			}
 		}
 		&-content {
 			text-align: center;
 			padding-left: 38px;
+			@include phone {
+				padding: 0;
+			}
 		}
 		
 		&-description {
@@ -243,11 +353,29 @@ body {
 			padding-left: 40px;
 			
 		}
+		@include tablet { 
+			min-width: 100%;
+		}
 
 	}
 
 	&__left {
 		background: #efeee9;
+		@include large-screen {
+			display: flex;
+			justify-content: stretch;
+			flex-wrap: wrap;
+
+			&-title {
+				min-width: 360px;
+			}
+			&-description {
+				padding-left: 0;
+			}
+		}
+
+		
+		
 	}
 
 	&__right {
@@ -258,11 +386,12 @@ body {
 .google-map {
 	position: absolute;
 	width: 100%;
-	min-height: 100vh;
-	//background: rgba(0,150,136,0.85);
+	min-height: 980px;
+	background: rgba(0,150,136,0.85);
 	&__container{
 		position: relative;
-		min-height: 100vh;
+		display: flex;
+		min-height: 980px;
 	} 
 	&__zoom-in,
 	&__zoom-out{
@@ -296,10 +425,16 @@ body {
 	width: 100%;
 	min-height: 974px;
 	z-index: 1;
+
+	@include phone {
+		display: block;
+	}
 	&__block {
 		@extend .center-panel;
 		padding-top: 10px;
 		min-height: 280px;
+
+		
 	}
 
 	&__title {
@@ -340,11 +475,16 @@ body {
 .title-bg {
 	position:absolute;
 	display: block;
-	top: 0;
-	left: 0;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
 	width: 100%;
 	height: 100%;
-	opacity: 0.1;
+	opacity: 0.1; 
+
+	@include tablet {
+		height: 100%;
+	}
 }
 
 .about-wrap{
@@ -353,205 +493,37 @@ body {
 		&::before {
 			background: url(../images/portfolio_header.svg);
 			background-position:  center center;
-            background-repeat: no-repeat;
+			background-repeat: no-repeat;
+			
+			@include tablet {
+				display: none;
+			}
 		}
 	}
 
 	.about-columns__left-title {
 		position: relative;
+		margin: auto;
+		margin-bottom: 20px;
+		z-index: 2;
 		.title-bg {
 			background: url(../images/about_header.svg);
-			background-position:  center -40px;
-			background-size: 360px 120px;
-            background-repeat: no-repeat;
-		}
-	}
-}
-
-.my-works-wrap{
-	.main-header__user{
-		&::before {
-			background: url(../images/portfolio_header.svg);
 			background-position:  center center;
-            background-repeat: no-repeat;
-		}
-	}
-	.my-works{
-		&__triangle { 
-			position: relative;
-			width: 100%;
-		
-			.triangle{
-				width: 100%;
-				.left,
-				.right {
-					fill:#faf8f0;
-				}
-			}
-		}
-
-		&__title {
-			position: relative;
-			display: block;; 
-			text-align: center;
-			padding: 50px;
-
-			&--works{
-				background:#faf8f0;
-				.title-bg {
-					background: url(../images/works_header.svg);
-					background-position:  center top;
-					background-repeat: no-repeat;
-				}
-			}
-			&--feedback{
-				.title-bg {
-					background: url(../images/about_header.svg);
-					background-position:  center top;
-					background-repeat: no-repeat;
-				}
-				.title2 {
-					margin: 0;
-				}
-			}
-				
-		}
-
-		.opinions{
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			display: flex;
-			justify-content: center;
-			z-index: 2;
-			&__item {
-
-			}
-
-			.opinion{
-				position: relative;
-				margin-top: 50px;
-				padding: 10px;
-				max-width: 380px;
-
-				&::before {
-					content:"\f10d";
-					font-family: FontAwesome;
-					font-size: 36px;
-					opacity: 0.2;
-					position: absolute;
-					top: -45px;
-					left: 10px;
-				}
-				&__text {
-					margin-bottom: 40px;
-				}
-				&__img{
-					width: 78px;
-					height: 78px;
-					border-radius: 50%;
-					overflow: hidden;
-					&--img{
-						
-						width: 100%;
-						height: 100%;
-					}
-				}
-
-				&__subscribe{
-					display: flex;
-					justify-content: flex-start;
-				}
-				&__name {
-					flex-grow: 1;
-					display: block;
-					margin: auto;
-					padding-left: 24px;
-					color: #20b5a1;
-				}
-			}
-		}
-
-		.feedback{
-			position: relative;
-			display: flex;
-			flex-direction: column;
-			width: 100%;
-			min-height: 800px;
-			padding: 120px 0;
-			z-index: 1;
-			background: url(../images/bg_feedback.png) no-repeat;
-			background-position: center -350px;
+			background-size: contain;
+			background-repeat: no-repeat;
 			
-			&__bg {
+			// @include phone {
+			// 	background: url(../images/about_header.svg);
+			// 	background-position:  center -20px;
+			// 	background-size: 250px 70px;
+			// 	background-repeat: no-repeat;
 				
-				 
-				@extend .center-panel;
-				background: inherit;
-
-				&::before {
-					content:"";
-				 	position: absolute;
-				 	left: -5%;
-				 	top: -5%;
-				 	background: inherit;
-				 	background-position: center -610px;
-				 	box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.5);
-				 	filter: blur(5px);
-				 	width: 110%;
-				 	height: 110%;
-				}
-			}
-			&-form {
-				background: inherit;
-				background-position: center -550px;
-				@extend .center-panel;
-				position: relative;
-				
-				&__title {
-					margin: 30px;
-				}
-				&__row {
-					position: relative;
-					vertical-align: top;
-					.btns-bottom{
-						
-						margin-top: 38px;
-						position: relative;
-					}
-				}
-				&__label {
-					font-size: 0;
-					visibility: hidden;
-				}
-		
-				&__input {
-					position: relative;
-					width: 295px;
-					height: 42px;
-					margin: 0 auto;
-					margin-bottom: 20px;
-					padding-left: 18px;
-					border-radius: 5px;
-					color: #9b9ea0;
-					border: none;
-				}
-
-				&__textarea {
-					width: 280px;
-					padding: 18px;
-					border: none;
-					border-radius: 5px;
-				}
-				.btns-bottom {
-					margin-top: 20px;
-		
-				}
-			}
+			// }
 		}
 	}
 }
+
+
 
 .arrow-up {
 	content: "";
@@ -566,6 +538,12 @@ body {
 	border-left: 5px solid rgba(255,255,255,0.7);
 	border-bottom: 5px solid rgba(255,255,255,0.7);
 	z-index: 2;
+	@include tablet {
+		bottom: 300px;
+	}
+	@include phone {
+		bottom: 280px;
+	}
 	&:hover {
 		opacity: 0.5;
 	}
@@ -574,27 +552,13 @@ body {
 
 
 
-.blog-wrap{
-	padding-bottom: 150px;
-	.user__text-title {
-		position: relative;
-	}
-	.title-bg {
-		background: url(../images/blog_header.svg);
-		background-position:  center center;
-		background-size: 320px 180px;
-		background-repeat: no-repeat;
-	}
-
-}
-
-
 
 @import './common/socialButtons';
 @import './common/header';
 @import './common/footer';
 @import './common/authorization';
 @import './common/welcome';
+@import './common/my-works';
 @import './common/blog';
 @import './common/menu';
 @import './common/skillsList';
