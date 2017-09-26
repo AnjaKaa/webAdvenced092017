@@ -15,7 +15,7 @@
 	.title-bg {
 		background: url(../images/blog_header.svg);
 		background-position:  center center;
-		background-size: 320px 180px;
+		background-size: cover;
 		background-repeat: no-repeat;
 	}
 
@@ -208,6 +208,11 @@
             font-weight: bold;
             opacity: 1;
           }
+          &:hover {
+            opacity: 0.7;
+           
+          }
+         
       }
       .blog-menu__link
       {
@@ -216,6 +221,7 @@
         height: 100%;
         text-decoration: none;
         color: inherit;
+      
       }
     }
   }

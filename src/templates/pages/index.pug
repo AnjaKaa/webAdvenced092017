@@ -5,12 +5,15 @@ block variables
 
 block content
 	.index
-		.index__wrap.flex-wrap-column
-				.center-panel
-					.center-panel__front
-						include ../common/welcome.pug
-					.center-panel__back
-						include ../common/authorization.pug
-				
-				button.authorization-button Авторизоваться
-				.index__copyright &copy;Анна Власова | создано с любовью в LoftShcool | 2017
+		.bg-parallax
+			include ../common/parallax.pug
+		.container
+			.index__wrap.flex-wrap-column
+					.center-panel
+						.center-panel__front
+							include ../common/welcome.pug
+						.center-panel__back
+							include ../common/authorization.pug
+					
+					button.authorization-button Авторизоваться
+					.index__copyright &copy;Анна Власова | создано с любовью в LoftShcool | 2017

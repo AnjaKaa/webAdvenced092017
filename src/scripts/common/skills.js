@@ -90,9 +90,9 @@ function skillsInint() {
 
             circle.setAttribute('cx', cx);
             circle.setAttribute('cy', cy);
-            circle.setAttribute('r', this.radius);
+            circle.setAttribute('r', this.radius);circle.setAttribute('transform', `rotate(-90 ${cx} ${cy})`);
             if (isSector) {
-                circle.setAttribute('transform', `rotate(-90 ${cx} ${cy})`);
+                
                 circle.setAttribute('stroke-dasharray', this.strokeDasharray);
                 circle.setAttribute('stroke-dashoffset', this.strokeDasharray);
                 circle.setAttribute('data-part', part);
@@ -173,12 +173,11 @@ function skillsInint() {
 }
 
 function load(item) {
-    var anim = true;
 
     function heandler() {
         
-        var speed = 0.5, // скорость
-            startLoad = item.getAttribute('stroke-dashoffset'), // начальная позиция
+        var speed = 1, // скорость
+            startLoad = item.getAttribute('stroke-dasharray'), // начальная позиция
             finishLoad = item.dataset.part, // положение элемента 
             start = null; // тут будем считать затраченное время
 
@@ -203,6 +202,7 @@ function load(item) {
     }
 
     window.addEventListener( 'load', heandler());
+    window.addEventListener( 'scroll', () => { heandler();});
     
 }
 

@@ -154,7 +154,7 @@
             background: url(../images/example.png);
             background-repeat: no-repeat;
             background-size: contain;
-            background-position-y: center;
+            background-position: center;
             border:none;
 
             &::before{
@@ -190,7 +190,7 @@
             background: url(../images/example.png);
             background-repeat: no-repeat;
             background-size: contain;
-            background-position-y: center;
+            background-position: center;
             border:none;
             &::before{
                 content: "";
