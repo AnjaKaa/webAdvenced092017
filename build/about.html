@@ -10,134 +10,20 @@
     <link rel="stylesheet" href="./assets/styles/app.min.css">
   </head>
   <body>
-    <div class="about-wrap flex-wrap-column">
-      <header class="main-header">
-        <div class="main-header__bg"><img class="main-header__bg--img" src="./assets/images/background_mountains.jpg"></div>
-        <div class="main-header__menu container">
-          <button class="hamburger" type="button"><span class="hamburger__lines"></span></button>
-          <nav class="menu">
-            <!--.menu__before-->
-            <!--.menu__after-->
-            <ul class="menu__list">
-              <li class="menu__item"><a class="menu__link" href="./my-works.html"> Мои работы</a></li>
-              <li class="menu__item"><a class="menu__link" href="./about.html">Обо мне</a></li>
-              <li class="menu__item"><a class="menu__link" href="./blog.html">Блог</a></li>
-              <li class="menu__item"><a class="menu__link" href="./index.html">Авторизация</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div class="main-header__container container">
-          <div class="main-header__top-row">
-            <div class="main-header__social-buttons">
-              <ul class="social-buttons">
-                <li class="social-buttons__item"><a class="social-buttons__link" href="https://vk.com/anja_kaa" alt="vk">
-                    <svg class="social-buttons__icon" width="30" height="23">
-                      <use xlink:href="./assets/images/sprite.svg#vk"></use>
-                    </svg>vk</a></li>
-                <li class="social-buttons__item"><a class="social-buttons__link" href="https://github.com/VlaSovaAnna" alt="github">
-                    <svg class="social-buttons__icon" width="30" height="23">
-                      <use xlink:href="./assets/images/sprite.svg#github"></use>
-                    </svg>github</a></li>
-                <li class="social-buttons__item"><a class="social-buttons__link" href="#" alt="in">
-                    <svg class="social-buttons__icon" width="30" height="23">
-                      <use xlink:href="./assets/images/sprite.svg#in"></use>
-                    </svg>in</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="main-header__user">
-            <div class="user"><img class="user__main-photo" src="./assets/images/photo.jpg">
-              <div class="user__text-title">Анна Власова</div>
-              <div class="user__text-subtitle">Личный сайт вебразработчика</div>
-            </div>
-          </div>
-        </div>
-      </header>
-      <button class="main-header__arrow-downs arrow-down" type="button"></button>
-      <section class="about">
-        <div class="about-columns">
-          <div class="about-columns__left">
-            <svg class="triangle-tablet" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none">
-              <polygon class="left" points="0,0   0,86   500.8,86   500.8,75.5"></polygon>
-              <polygon class="left" points="1000,0   1000,86   500,86   500,75.5"></polygon>
-            </svg>
-            <svg class="triangle" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 85" preserveaspectratio="none">
-              <polygon class="left" points="0,0   0,86   500.8,86   500.8,75.5"></polygon>
-            </svg>
-            <div class="about-columns__left-title">
-              <div class="title-bg"></div>
-              <h2 class="title2">Обо мне</h2>
-            </div>
-            <div class="about-columns__left-content">
-              <div class="user-description">
-                <div class="user-description__image">
-                  <div class="main_photo__big"><img src="./assets/images/photo.jpg"></div>
-                </div>
-                <div class="user-description__title">
-                  <h3 class="title3">Кто я</h3>
-                </div>
-                <div class="user-description__text">
-                  <p>Я начинающий веб-разработчик. </p>
-                  <p>Я занимаюсь разработкой современных сайтов и приложений.</p>Мне нравится делать интересные и современные проекты.
-                  <p>Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. </p>Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="about-columns__right">
-            <svg class="triangle" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 85" preserveaspectratio="none">
-              <polygon class="right" points="0,75.5   0,86   500.8,86   500.8,0"></polygon>
-            </svg>
-            <div class="about-columns__right-title">
-              <h3 class="title3">Чем я могу быть<br> вам полезна</h3>
-            </div>
-            <div class="about-columns__right-description">
-              <p>Больше всего меня привлекает Frontend разработка, но я также знакома и могу решать не сложные задачи на Backend. Но давайте по порядку.</p>
-            </div>
-            <div class="about-columns__right-content">
-              <ul class="skills-list"></ul>
-            </div>
-          </div>
-        </div>
-        <div class="about__contacts contacts">
-          <div class="contacts__map google-map">
-            <div class="google-map__container" id="google-container"></div>
-            <div class="google-map__zoom-in" id="zoom-in"></div>
-            <div class="google-map__zoom-out" id="zoom-out"></div>
-          </div>
-          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNGhz5BDUHMR6ds84jkIo-kd3s9SEdsP0"></script>
-          <div class="contacts__block">
-            <h3 class="contacts__title">
-              <div class="title3">Контакты</div>
-            </h3>
-            <ul class="contacts__list contacts-list">
-              <li class="contacts-list__item">
-                <svg class="contacts-list__icon" width="24" height="24">
-                  <use xlink:href="./assets/images/sprite.svg#skype"></use>
-                </svg><span class="contacts-list__text">anja.kaa1</span>
-              </li>
-              <li class="contacts-list__item">
-                <svg class="contacts-list__icon" width="24" height="24">
-                  <use xlink:href="./assets/images/sprite.svg#envelope"></use>
-                </svg><span class="contacts-list__text">anja_kaa@mail.ru</span>
-              </li>
-              <li class="contacts-list__item">
-                <svg class="contacts-list__icon" width="24" height="24">
-                  <use xlink:href="./assets/images/sprite.svg#phone"></use>
-                </svg><span class="contacts-list__text">+7-123-456-78-90</span>
-              </li>
-              <li class="contacts-list__item">
-                <svg class="contacts-list__icon" width="24" height="24">
-                  <use xlink:href="./assets/images/sprite.svg#map_marker"></use>
-                </svg><span class="contacts-list__text">г. Москва</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <div class="main-footer">
-        <div class="main-footer__row container">
-          <div class="main-footer__item">
+    <div class="spinner">
+      <svg class="spinner__circle" width="200" height="200" viewBox="0 0 200 200">
+        <circle class="spinner__sector" r="40" cx="50%" cy="50%" transform="rotate(-90 100 100)" stroke-dasharray="251.32741228718345" stroke-dashoffset="251.32741228718345" data-radius="40"></circle>
+        <circle class="spinner__sector" opacity="0.7" r="55" cx="50%" cy="50%" transform="rotate(-90 100 100)" stroke-dasharray="345.57519189487726" stroke-dashoffset="345.57519189487726" data-radius="55"></circle>
+        <circle class="spinner__sector" opacity="0.4" r="70" cx="50%" cy="50%" transform="rotate(-90 100 100)" stroke-dasharray="439.822971502571" stroke-dashoffset="439.822971502571" data-radius="70"></circle>
+        <div class="spinner__title">0</div>
+      </svg>
+    </div>
+    <div class="content content--unload">
+      <div class="about-wrap flex-wrap-column">
+        <header class="main-header">
+          <div class="main-header__bg"><img class="main-header__bg--img" src="./assets/images/background_mountains.jpg"></div>
+          <div class="main-header__menu container">
+            <button class="hamburger" type="button"><span class="hamburger__lines"></span></button>
             <nav class="menu">
               <!--.menu__before-->
               <!--.menu__after-->
@@ -149,29 +35,153 @@
               </ul>
             </nav>
           </div>
-          <div class="main-footer__item">
-            <ul class="social-buttons">
-              <li class="social-buttons__item"><a class="social-buttons__link" href="https://vk.com/anja_kaa" alt="vk">
-                  <svg class="social-buttons__icon" width="30" height="23">
-                    <use xlink:href="./assets/images/sprite.svg#vk_round"></use>
-                  </svg>vk</a></li>
-              <li class="social-buttons__item"><a class="social-buttons__link" href="https://github.com/VlaSovaAnna" alt="github">
-                  <svg class="social-buttons__icon" width="30" height="23">
-                    <use xlink:href="./assets/images/sprite.svg#github_round"></use>
-                  </svg>github</a></li>
-              <li class="social-buttons__item"><a class="social-buttons__link" href="#" alt="in">
-                  <svg class="social-buttons__icon" width="30" height="23">
-                    <use xlink:href="./assets/images/sprite.svg#in_round"></use>
-                  </svg>in</a></li>
-            </ul>
+          <div class="main-header__container container">
+            <div class="main-header__top-row">
+              <div class="main-header__social-buttons">
+                <ul class="social-buttons">
+                  <li class="social-buttons__item"><a class="social-buttons__link" href="https://vk.com/anja_kaa" alt="vk">
+                      <svg class="social-buttons__icon" width="30" height="23">
+                        <use xlink:href="./assets/images/sprite.svg#vk"></use>
+                      </svg>vk</a></li>
+                  <li class="social-buttons__item"><a class="social-buttons__link" href="https://github.com/VlaSovaAnna" alt="github">
+                      <svg class="social-buttons__icon" width="30" height="23">
+                        <use xlink:href="./assets/images/sprite.svg#github"></use>
+                      </svg>github</a></li>
+                  <li class="social-buttons__item"><a class="social-buttons__link" href="#" alt="in">
+                      <svg class="social-buttons__icon" width="30" height="23">
+                        <use xlink:href="./assets/images/sprite.svg#in"></use>
+                      </svg>in</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="main-header__user">
+              <div class="user"><img class="user__main-photo" src="./assets/images/photo.jpg">
+                <div class="user__text-title">Анна Власова</div>
+                <div class="user__text-subtitle">Личный сайт вебразработчика</div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="main-footer__row container">
-          <div class="main-footer__item">
-            <div class="main-footer__item main-footer__text-description">Я начинающий вебразработчик, и этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool.</div>
+        </header>
+        <button class="main-header__arrow-downs arrow-down" type="button"></button>
+        <section class="about">
+          <div class="about-columns">
+            <div class="about-columns__left">
+              <svg class="triangle-tablet" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none">
+                <polygon class="left" points="0,0   0,86   500.8,86   500.8,75.5"></polygon>
+                <polygon class="left" points="1000,0   1000,86   500,86   500,75.5"></polygon>
+              </svg>
+              <svg class="triangle" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 85" preserveaspectratio="none">
+                <polygon class="left" points="0,0   0,86   500.8,86   500.8,75.5"></polygon>
+              </svg>
+              <div class="about-columns__left-title">
+                <div class="title-bg"></div>
+                <h2 class="title2">Обо мне</h2>
+              </div>
+              <div class="about-columns__left-content">
+                <div class="user-description">
+                  <div class="user-description__image">
+                    <div class="main_photo__big"><img src="./assets/images/photo.jpg"></div>
+                  </div>
+                  <div class="user-description__title">
+                    <h3 class="title3">Кто я</h3>
+                  </div>
+                  <div class="user-description__text">
+                    <p>Я начинающий веб-разработчик. </p>
+                    <p>Я занимаюсь разработкой современных сайтов и приложений.</p>Мне нравится делать интересные и современные проекты.
+                    <p>Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. </p>Чуть позже я освежу в нём свой контент. А пока посмотрите,как тут всё классно и красиво!
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="about-columns__right">
+              <svg class="triangle" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 500 85" preserveaspectratio="none">
+                <polygon class="right" points="0,75.5   0,86   500.8,86   500.8,0"></polygon>
+              </svg>
+              <div class="about-columns__right-title">
+                <h3 class="title3">Чем я могу быть<br> вам полезна</h3>
+              </div>
+              <div class="about-columns__right-description">
+                <p>Больше всего меня привлекает Frontend разработка, но я также знакома и могу решать не сложные задачи на Backend. Но давайте по порядку.</p>
+              </div>
+              <div class="about-columns__right-content">
+                <ul class="skills-list"></ul>
+              </div>
+            </div>
           </div>
-          <div class="main-footer__item">
-            <div class="main-footer__copyright">&copy;Анна Власова | создано с любовью в LoftShcool | 2017</div>
+          <div class="about__contacts contacts">
+            <div class="contacts__map google-map">
+              <div class="google-map__container" id="google-container"></div>
+              <div class="google-map__zoom-in" id="zoom-in"></div>
+              <div class="google-map__zoom-out" id="zoom-out"></div>
+            </div>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNGhz5BDUHMR6ds84jkIo-kd3s9SEdsP0"></script>
+            <div class="contacts__block">
+              <h3 class="contacts__title">
+                <div class="title3">Контакты</div>
+              </h3>
+              <ul class="contacts__list contacts-list">
+                <li class="contacts-list__item">
+                  <svg class="contacts-list__icon" width="24" height="24">
+                    <use xlink:href="./assets/images/sprite.svg#skype"></use>
+                  </svg><span class="contacts-list__text">anja.kaa1</span>
+                </li>
+                <li class="contacts-list__item">
+                  <svg class="contacts-list__icon" width="24" height="24">
+                    <use xlink:href="./assets/images/sprite.svg#envelope"></use>
+                  </svg><span class="contacts-list__text">anja_kaa@mail.ru</span>
+                </li>
+                <li class="contacts-list__item">
+                  <svg class="contacts-list__icon" width="24" height="24">
+                    <use xlink:href="./assets/images/sprite.svg#phone"></use>
+                  </svg><span class="contacts-list__text">+7-123-456-78-90</span>
+                </li>
+                <li class="contacts-list__item">
+                  <svg class="contacts-list__icon" width="24" height="24">
+                    <use xlink:href="./assets/images/sprite.svg#map_marker"></use>
+                  </svg><span class="contacts-list__text">г. Москва</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <div class="main-footer">
+          <div class="main-footer__row container">
+            <div class="main-footer__item">
+              <nav class="menu">
+                <!--.menu__before-->
+                <!--.menu__after-->
+                <ul class="menu__list">
+                  <li class="menu__item"><a class="menu__link" href="./my-works.html"> Мои работы</a></li>
+                  <li class="menu__item"><a class="menu__link" href="./about.html">Обо мне</a></li>
+                  <li class="menu__item"><a class="menu__link" href="./blog.html">Блог</a></li>
+                  <li class="menu__item"><a class="menu__link" href="./index.html">Авторизация</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="main-footer__item">
+              <ul class="social-buttons">
+                <li class="social-buttons__item"><a class="social-buttons__link" href="https://vk.com/anja_kaa" alt="vk">
+                    <svg class="social-buttons__icon" width="30" height="23">
+                      <use xlink:href="./assets/images/sprite.svg#vk_round"></use>
+                    </svg>vk</a></li>
+                <li class="social-buttons__item"><a class="social-buttons__link" href="https://github.com/VlaSovaAnna" alt="github">
+                    <svg class="social-buttons__icon" width="30" height="23">
+                      <use xlink:href="./assets/images/sprite.svg#github_round"></use>
+                    </svg>github</a></li>
+                <li class="social-buttons__item"><a class="social-buttons__link" href="#" alt="in">
+                    <svg class="social-buttons__icon" width="30" height="23">
+                      <use xlink:href="./assets/images/sprite.svg#in_round"></use>
+                    </svg>in</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="main-footer__row container">
+            <div class="main-footer__item">
+              <div class="main-footer__item main-footer__text-description">Я начинающий вебразработчик, и этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool.</div>
+            </div>
+            <div class="main-footer__item">
+              <div class="main-footer__copyright">&copy;Анна Власова | создано с любовью в LoftShcool | 2017</div>
+            </div>
           </div>
         </div>
       </div>

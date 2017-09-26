@@ -90,7 +90,8 @@ function skillsInint() {
 
             circle.setAttribute('cx', cx);
             circle.setAttribute('cy', cy);
-            circle.setAttribute('r', this.radius);circle.setAttribute('transform', `rotate(-90 ${cx} ${cy})`);
+            circle.setAttribute('r', this.radius);
+            circle.setAttribute('transform', `rotate(-90 ${cx} ${cy})`);
             if (isSector) {
                 
                 circle.setAttribute('stroke-dasharray', this.strokeDasharray);

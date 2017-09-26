@@ -10,8 +10,20 @@ html(lang="ru")
 		meta(content="width=device-width, initial-scale=1" name="viewport")
 		meta(content="ie=edge" http-equiv="x-ua-compatible")
 		link(rel='stylesheet' href='./assets/styles/app.min.css')
-		
-
 	body
-		block content
+		.spinner
+			- var radius = [40, 55, 70];
+			- var size = 200
+			svg(width=size height=size viewBox="0 0 "+size+" "+size).spinner__circle
+				circle(r=radius[0] cx="50%" cy="50%" transform="rotate(-90 "+size/2+" "+size/2+")" 
+                stroke-dasharray = 2*Math.PI*radius[0] stroke-dashoffset = 2*Math.PI*radius[0] data-radius=radius[0]).spinner__sector
+				circle(opacity="0.7" r=radius[1] cx="50%" cy="50%" transform="rotate(-90 "+size/2+" "+size/2+")" 
+                stroke-dasharray = 2*Math.PI*radius[1] stroke-dashoffset = 2*Math.PI*radius[1]  data-radius=radius[1]).spinner__sector
+				circle(opacity="0.4" r=radius[2] cx="50%" cy="50%" transform="rotate(-90 "+size/2+" "+size/2+")" 
+                stroke-dasharray = 2*Math.PI*radius[2] stroke-dashoffset = 2*Math.PI*radius[2]  data-radius=radius[2]).spinner__sector
+				.spinner__title 0
+
+		.content.content--unload
+			block content
 		script(src='./assets/scripts/bundle.js' defer)
+			

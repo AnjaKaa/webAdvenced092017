@@ -16,7 +16,6 @@ function parallaxInit() {
                 const positionX = initialX*devider;
                 
                 const positionY = initialY*devider;
-                const img = layer.firstElementChild;
                 const coeff=1+devider;
 
                 layer.style.transform = `translate(${positionX}px,${positionY}px) scale(${coeff})`;

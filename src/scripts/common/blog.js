@@ -12,6 +12,7 @@ function blogInit() {
             item.id = 'text'+(i+1).toString();
 
             let link = document.createElement('a');
+            
             link.setAttribute('name', item.id);
             item.appendChild(link);
 
@@ -24,8 +25,11 @@ function blogInit() {
 
             newLiLink.classList.add('blog-menu__link');
             newLiLink.setAttribute('href', '#'+item.id);
-            newLiLink.innerText=item.querySelector('.blog__text-title').innerText; 
-            newLiLink.addEventListener('click', ()=>{ setActiveTextBlok(item);console.log('link'); })
+            newLiLink.textContent=item.querySelector('.blog__text-title').textContent; 
+            newLiLink.addEventListener('click', () => { 
+                setActiveTextBlok(item);
+            });
+            
             newLi.appendChild(newLiLink); 
             // первый пункт активный
             if (i==0) {

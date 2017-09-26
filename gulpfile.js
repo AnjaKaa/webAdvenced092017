@@ -108,14 +108,14 @@ function server() {
 // переносим картинки
 function images() {
     return gulp.src(paths.images.src)
-        .pipe(gulp.dest(paths.images.dest))
+        .pipe(gulp.dest(paths.images.dest));
 }
 
 // переносим шрифты
 function fonts() {
     return gulp.src(paths.fonts.src)
-        .pipe(gulp.dest(paths.fonts.dest))
-};
+        .pipe(gulp.dest(paths.fonts.dest));
+}
 
 // linter
 function lint() {

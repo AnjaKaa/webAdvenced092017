@@ -580,6 +580,59 @@ body {
 	}
 }
 
+.spinner {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	
+
+	background: url(../images/bg_preloader.jpg) no-repeat;
+	background-position: center;
+	background-size: cover;
+	z-index: 10;
+
+	&__title {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		color: #fff;
+	}
+
+	&__circle {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		
+	}
+
+	&__sector {
+		fill: none;
+		stroke-width: 2px;
+		stroke: #fff;
+		transform-origin: 50% 50%;
+
+		&:nth-child(1){
+			transform: rotate(-90deg);
+		}
+		&:nth-child(2){
+			transform: rotate(-110deg);
+		}
+		&:nth-child(3){
+			transform: rotate(-130deg);
+		}
+	}
+}
+
+.content {
+	
+	&--unload {
+		visibility: hidden;
+	}
+}
 
 
 
