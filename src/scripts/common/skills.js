@@ -1,4 +1,6 @@
 function skillsInint() {
+    "use strict";
+
     let skillsList = [
         {
             group: 'Frontend',
@@ -169,42 +171,74 @@ function skillsInint() {
                 load(skillItem.svg.lastChild); 
             });
         })
-    }
     
-}
+    
+        function load(item) {
 
-function load(item) {
+            function heandler() {                
+                var speed = 5, // скорость
+                    
+                    startLoad = item.getAttribute('stroke-dasharray'), // начальная позиция
+                    finishLoad = item.dataset.part, // положение элемента 
+                    start = null; // тут будем считать затраченное время
 
-    function heandler() {
-        
-        var speed = 1, // скорость
-            startLoad = item.getAttribute('stroke-dasharray'), // начальная позиция
-            finishLoad = item.dataset.part, // положение элемента 
-            start = null; // тут будем считать затраченное время
+                function step(time) {
+                    // в первый кадр запомним время старта
+                    if (start === null) {
+                        start = time;
+                    }
+                    var progress = time - start,     // определить, сколько прошло времени с начала анимации
+                        nowLoad= Math.max(startLoad - progress / speed, finishLoad);
 
-        function step(time) {
-            // в первый кадр запомним время старта
-            if (start === null) {
-                start = time;
+                    // прокрутим скролл
+                    item.setAttribute('stroke-dashoffset', nowLoad);
+                    // если прокрутка еще не окончена, повторим шаг
+                    if (nowLoad != finishLoad) {
+                        requestAnimationFrame(step);     // запланировать отрисовку следующего кадра
+                    }
+                }
+                // Начнем плавную прокрутку
+                requestAnimationFrame(step);
+                    
             }
-            var progress = time - start,     // определить, сколько прошло времени с начала анимации
-                nowLoad= Math.max(startLoad - progress / speed, finishLoad);
 
-            // прокрутим скролл
-            item.setAttribute('stroke-dashoffset', nowLoad);
-            // если прокрутка еще не окончена, повторим шаг
-            if (nowLoad != finishLoad) {
-                requestAnimationFrame(step);     // запланировать отрисовку следующего кадра
+            var needAnim=true;
+
+            function checkМisibility(elem) {
+                var offsetTop = elem.getBoundingClientRect().top;
+                var offsetBottom = elem.getBoundingClientRect().bottom;
+                var windowMargin = Math.ceil(window.innerHeight/3);
+                var windowHeight = window.innerHeight;
+                var topBorder = offsetTop - windowMargin;
+                var bottomBorder =windowHeight- offsetBottom - windowMargin;
+
+                return topBorder< 0 && bottomBorder<0;
             }
+             
+            window.addEventListener( 'load', ()=>{heandler();});
+
+            var isScrolling =false;
+
+            window.addEventListener( 'scroll', () => {
+                if (isScrolling == false ) {
+                    window.requestAnimationFrame(function() {
+                        if(checkМisibility(listWrap)) {
+                            if(needAnim) {
+                                heandler();
+                                console.log('animate skill');
+                                needAnim=false;
+                            }                        
+                        } else {
+                            needAnim=true;
+                        }
+                      isScrolling = false;
+                    });
+                }
+                isScrolling = true;
+             });
         }
-        // Начнем плавную прокрутку
-        requestAnimationFrame(step);
-            
+        
     }
-
-    window.addEventListener( 'load', heandler());
-    window.addEventListener( 'scroll', () => { heandler();});
-    
 }
 
 module.exports=skillsInint;

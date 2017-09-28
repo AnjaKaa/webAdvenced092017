@@ -9,6 +9,8 @@ const map = require('./common/google-map');
 const skills = require('./common/skills'); 
 const slider = require('./common/slider');
 
+const authForm = require('./common/auth-form');
+
 spinner();
 welcome();
 parallax();
@@ -18,3 +20,4 @@ arrowsButton();
 map();
 skills();
 slider();
+authForm();

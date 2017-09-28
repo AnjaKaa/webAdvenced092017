@@ -1,31 +1,31 @@
 section.authorization
 	h2.authorization__title.title3 Авторизуйтесь
-	form.authorization__form.authorization-form
+	form.authorization__form.authorization-form(novalidate)
 		.authorization-form__row
-			.auth_login
-				label.auth_login__label(for="login") Логин
-				.auth_login__input-wrap
-					svg.auth_login__icon(width=30 height=23)
-						use(xlink:href='./assets/images/sprite.svg#login')
-					input.auth_login__input(type="text" name="login" id="login" placeholder="Логин")
+			.auth-input
+				.auth-input__input-wrap
+					input.auth-input__input(type="text" name="login" id="login" placeholder="Логин" required)
+					label.auth-input__label(for="login") Логин
+						svg.auth-input__icon(width=30 height=23)
+							use(xlink:href='./assets/images/sprite.svg#login')
 		.authorization-form__row
-			.auth_password
-				label.auth_password__label(for="password") Пароль
-				.auth_password__input-wrap
-					svg.auth_password__icon(width=30 height=23)
-						use(xlink:href='./assets/images/sprite.svg#password')
-					input.auth_password__input(type="password" name="password" id="password" placeholder="Пароль")
+			.auth_input
+				.auth-input__input-wrap
+					input.auth-input__input(type="password" name="password" id="password" placeholder="Пароль" required)
+					label.auth-input__label(for="password") Пароль
+						svg.auth-input__icon(width=30 height=23)
+							use(xlink:href='./assets/images/sprite.svg#password')
 		.authorization-form__row
-			.auth_checkbox
-				input.auth_checkbox__input(type="checkbox" name="checkbox" id="checkbox" checked)
-				label.auth_checkbox_label(for="checkbox") Я человек
+			.auth-checkbox
+				input.auth-checkbox__input(type="checkbox" name="checkbox" id="checkbox" checked)
+				label.auth-checkbox_label(for="checkbox") Я человек
 		.authorization-form__row
-			.auth_radio
-				h4.auth_radio__title Вы точно не робот?
-				input.auth_radio__input(type="radio" name="radio" id="radio1" checked)
-				label.auth_radio__label(for="radio1") Да
-				input.auth_radio__input(type="radio" name="radio" id="radio2" ) 
-				label.auth_radio__label(for="radio2") Не уверен
+			.auth-radio
+				h4.auth-radio__title Вы точно не робот?
+				input.auth-radio__input(type="radio" name="radio" id="radio1" checked)
+				label.auth-radio__label(for="radio1") Да
+				input.auth-radio__input(type="radio" name="radio" id="radio2" ) 
+				label.auth-radio__label(for="radio2") Не уверен
 		.authorization-form__row
 			.btns-bottom
 				button(type="button").btns-bottom__item.to_welcome На главную

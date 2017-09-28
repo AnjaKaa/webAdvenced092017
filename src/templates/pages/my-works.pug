@@ -39,11 +39,11 @@ block content
 							.feedback-form__title.title3 Связаться со мной
 							form.feedback-form__form
 								.feedback-form__row
-									input.feedback-form__input(type="text" name="name" placeholder="Имя")
+									input.feedback-form__input(type="text" name="name" placeholder="Имя" required)
 								.feedback-form__row
-									input.feedback-form__input(type="text" name="email"  placeholder="Email")
+									input.feedback-form__input(type="email" name="email"  placeholder="Email" required)
 								.feedback-form__row
-									textarea.feedback-form__textarea(cols="50" rows="7"  placeholder="Ваше сообщение")
+									textarea.feedback-form__textarea(cols="50" rows="7"  placeholder="Ваше сообщение" required)
 								.feedback-form__row
 									.btns-bottom
 										button(type="submit").btns-bottom__item Отправить

@@ -1,4 +1,7 @@
 function googleMapInit() {
+    
+    "use strict";
+    
     // Местоположение: долгота, широта и коэффициент увеличения
 
     var latitude = 55.769,

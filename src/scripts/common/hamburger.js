@@ -1,4 +1,6 @@
 function hamburgerInit() {
+  
+  "use strict";
 
   let toggle = document.querySelector(".hamburger");
   if(toggle) {

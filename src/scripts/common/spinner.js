@@ -1,43 +1,57 @@
 function spinnerInit() {
+    "use strict";
+
     const spinner = document.querySelector('.spinner');
 
     if (spinner) {
         const content = document.querySelector('.content');
+        const title = document.querySelector('.spinner__title');
+        const sectors = document.querySelectorAll('.spinner__sector');
 
+        spinner.classList.remove('off');
         content.classList.add('content--unload');
 
+        const drawSectors = (percent) => {
+            [].slice.call(sectors).forEach((sector, i) => {
+                sector.style.strokeDashoffset = (100 - Math.max(percent-25*i, 0)*(4/(4-i)))/100*2*Math.PI*sector.dataset.radius;
+            })
+        }
+       
+        const spinnerLoadEnd = () => {
+            console.log('ready');
+            drawSectors(100);
+            title.innerText = '100';
+            content.classList.remove('content--unload');
+            spinner.style.transition = '0.5s';
+            spinner.style.opacity = '0';
+            spinner.style.visibility = 'hidden';
+            //spinner.classList.add('off');
+        }
+        
         const spinnerLoad = () => {
-            const title = document.querySelector('.spinner__title');
+            
             const ElementsList = document.getElementsByTagName('*');
             const cntElements = ElementsList.length;
            
             const percent = 100 / cntElements;
             let progress = 0;
-            const sectors = document.querySelectorAll('.spinner__sector');
+            
 
             let interval = setInterval( () => {
                 progress = Math.min( progress + percent, 100);
-                drawSectors( progress );
                 title.innerText = Math.round(progress);
+                drawSectors( progress );
+                
                 if ( progress == 100) {
                     clearInterval( interval );
-                    content.classList.remove('content--unload');
-                    spinner.style.transition = '0.5s';
-                    spinner.style.opacity = '0';
-                    spinner.style.visibility = 'hidden';
-                    //spinner.classList.add('off');
+                    spinnerLoadEnd();
                 }
-            }, 5);
+            }, 1);
 
-            const drawSectors = (percent) => {
-                [].slice.call(sectors).forEach((sector, i) => {
-                    sector.style.strokeDashoffset = (100 - Math.max(percent-25*i, 0)*(4/(4-i)))/100 *2*Math.PI*sector.dataset.radius;
-                })
-            }
-           
-        }
-        
-        window.addEventListener('load', spinnerLoad);
+        };
+
+        window.addEventListener('DOMContentLoaded', spinnerLoad);
+        //window.addEventListener('load', spinnerLoadEnd);
     }
 }
 

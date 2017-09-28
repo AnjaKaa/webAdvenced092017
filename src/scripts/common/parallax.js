@@ -1,16 +1,15 @@
 function parallaxInit() {
+    
+    "use strict";
+
     const parallaxContainer = document.getElementById('parallax');
 
     if (parallaxContainer) {
         const layers = parallaxContainer.children;
-        
-        
-
         const moveLayers = e => {
             const initialX = parallaxContainer.offsetWidth/2 - e.pageX;
             const initialY = parallaxContainer.offsetHeight/2 -e.pageY;
-            
-           
+        
             [].slice.call(layers).forEach(function(layer, i) {
                 const devider = i/100;
                 const positionX = initialX*devider;

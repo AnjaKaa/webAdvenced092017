@@ -1,5 +1,7 @@
 
 function welcomeInit() {
+	"use strict";
+	
 	document.addEventListener('click', function(e) {
 		if (e.target.classList.contains('authorization-button')) {
 			document.querySelector('.authorization-button').style.visibility='hidden';

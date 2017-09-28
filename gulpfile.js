@@ -63,7 +63,10 @@ function templates() {
 function styles() {
     return gulp.src('src/styles/app.scss')
         .pipe(sourcemaps.init())
-        .pipe(sass({ outputStyle: 'compressed' }))
+        .pipe(sass({ 
+            outputStyle: 'compressed',
+            includePaths: require('node-normalize-scss').includePaths
+        }))
         .pipe(autoprefixer( {
             browsers: ['>5%'],
             cascade: false

@@ -1,4 +1,13 @@
 .slider {
+    position: relative;
+
+    @include tablet {
+        margin-top:  30px;
+    }
+    
+    @include phone {
+        margin-top:  20px;
+    }
     .slider-wrap{
         position: relative;
     }

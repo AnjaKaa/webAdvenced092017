@@ -10,8 +10,9 @@ html(lang="ru")
 		meta(content="width=device-width, initial-scale=1" name="viewport")
 		meta(content="ie=edge" http-equiv="x-ua-compatible")
 		link(rel='stylesheet' href='./assets/styles/app.min.css')
+		script(src='./assets/scripts/bundle.js' defer)
 	body
-		.spinner
+		.spinner.off
 			- var radius = [40, 55, 70];
 			- var size = 200
 			svg(width=size height=size viewBox="0 0 "+size+" "+size).spinner__circle
@@ -23,7 +24,6 @@ html(lang="ru")
                 stroke-dasharray = 2*Math.PI*radius[2] stroke-dashoffset = 2*Math.PI*radius[2]  data-radius=radius[2]).spinner__sector
 				.spinner__title 0
 
-		.content.content--unload
+		.content
 			block content
-		script(src='./assets/scripts/bundle.js' defer)
 			

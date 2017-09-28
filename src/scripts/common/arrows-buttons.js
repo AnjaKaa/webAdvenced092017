@@ -1,4 +1,6 @@
 function arrowDownsInit() {
+    "use strict";
+    
     let btnDown = document.querySelector('.arrow-down');
     let btnUp = document.querySelector('.arrow-up');
 

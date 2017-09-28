@@ -1,4 +1,7 @@
 function sliderInint() {
+    
+    "use strict";
+    
     let slider = document.querySelector('.slider__list');
 
     if (slider) {

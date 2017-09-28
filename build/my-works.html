@@ -8,9 +8,10 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link rel="stylesheet" href="./assets/styles/app.min.css">
+    <script src="./assets/scripts/bundle.js" defer></script>
   </head>
   <body>
-    <div class="spinner">
+    <div class="spinner off">
       <svg class="spinner__circle" width="200" height="200" viewBox="0 0 200 200">
         <circle class="spinner__sector" r="40" cx="50%" cy="50%" transform="rotate(-90 100 100)" stroke-dasharray="251.32741228718345" stroke-dashoffset="251.32741228718345" data-radius="40"></circle>
         <circle class="spinner__sector" opacity="0.7" r="55" cx="50%" cy="50%" transform="rotate(-90 100 100)" stroke-dasharray="345.57519189487726" stroke-dashoffset="345.57519189487726" data-radius="55"></circle>
@@ -18,7 +19,7 @@
         <div class="spinner__title">0</div>
       </svg>
     </div>
-    <div class="content content--unload">
+    <div class="content">
       <div class="my-works-wrap flex-wrap-column"> 
         <header class="main-header">
           <div class="main-header__bg"><img class="main-header__bg--img" src="./assets/images/background_mountains.jpg"></div>
@@ -168,13 +169,13 @@
                   <div class="feedback-form__title title3">Связаться со мной</div>
                   <form class="feedback-form__form">
                     <div class="feedback-form__row">
-                      <input class="feedback-form__input" type="text" name="name" placeholder="Имя">
+                      <input class="feedback-form__input" type="text" name="name" placeholder="Имя" required>
                     </div>
                     <div class="feedback-form__row">
-                      <input class="feedback-form__input" type="text" name="email" placeholder="Email">
+                      <input class="feedback-form__input" type="email" name="email" placeholder="Email" required>
                     </div>
                     <div class="feedback-form__row">
-                      <textarea class="feedback-form__textarea" cols="50" rows="7" placeholder="Ваше сообщение"></textarea>
+                      <textarea class="feedback-form__textarea" cols="50" rows="7" placeholder="Ваше сообщение" required></textarea>
                     </div>
                     <div class="feedback-form__row">
                       <div class="btns-bottom">
@@ -231,6 +232,5 @@
         </div>
       </div>
     </div>
-    <script src="./assets/scripts/bundle.js" defer></script>
   </body>
 </html>

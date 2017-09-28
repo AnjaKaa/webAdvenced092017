@@ -1,3 +1,9 @@
+$mainColor: #00bfa5;
+$hoverColor:  #009688;
+$textColor: #455a64;
+$errorColor: #e44845;
+
+
 @mixin large-screen {
     @media (min-width: 1200px) {
         @content

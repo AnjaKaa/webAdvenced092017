@@ -8,9 +8,10 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="ie=edge" http-equiv="x-ua-compatible">
     <link rel="stylesheet" href="./assets/styles/app.min.css">
+    <script src="./assets/scripts/bundle.js" defer></script>
   </head>
   <body>
-    <div class="spinner">
+    <div class="spinner off">
       <svg class="spinner__circle" width="200" height="200" viewBox="0 0 200 200">
         <circle class="spinner__sector" r="40" cx="50%" cy="50%" transform="rotate(-90 100 100)" stroke-dasharray="251.32741228718345" stroke-dashoffset="251.32741228718345" data-radius="40"></circle>
         <circle class="spinner__sector" opacity="0.7" r="55" cx="50%" cy="50%" transform="rotate(-90 100 100)" stroke-dasharray="345.57519189487726" stroke-dashoffset="345.57519189487726" data-radius="55"></circle>
@@ -18,7 +19,7 @@
         <div class="spinner__title">0</div>
       </svg>
     </div>
-    <div class="content content--unload">
+    <div class="content">
       <div class="index">
         <div class="bg-parallax">
           <div class="parallax" id="parallax">
@@ -78,42 +79,44 @@
               <div class="center-panel__back">
                 <section class="authorization">
                   <h2 class="authorization__title title3">Авторизуйтесь</h2>
-                  <form class="authorization__form authorization-form">
+                  <form class="authorization__form authorization-form" novalidate>
                     <div class="authorization-form__row">
-                      <div class="auth_login">
-                        <label class="auth_login__label" for="login">Логин</label>
-                        <div class="auth_login__input-wrap">
-                          <svg class="auth_login__icon" width="30" height="23">
-                            <use xlink:href="./assets/images/sprite.svg#login"></use>
-                          </svg>
-                          <input class="auth_login__input" type="text" name="login" id="login" placeholder="Логин">
+                      <div class="auth-input">
+                        <div class="auth-input__input-wrap">
+                          <input class="auth-input__input" type="text" name="login" id="login" placeholder="Логин" required>
+                          <label class="auth-input__label" for="login">Логин
+                            <svg class="auth-input__icon" width="30" height="23">
+                              <use xlink:href="./assets/images/sprite.svg#login"></use>
+                            </svg>
+                          </label>
                         </div>
                       </div>
                     </div>
                     <div class="authorization-form__row">
-                      <div class="auth_password">
-                        <label class="auth_password__label" for="password">Пароль</label>
-                        <div class="auth_password__input-wrap">
-                          <svg class="auth_password__icon" width="30" height="23">
-                            <use xlink:href="./assets/images/sprite.svg#password"></use>
-                          </svg>
-                          <input class="auth_password__input" type="password" name="password" id="password" placeholder="Пароль">
+                      <div class="auth_input">
+                        <div class="auth-input__input-wrap">
+                          <input class="auth-input__input" type="password" name="password" id="password" placeholder="Пароль" required>
+                          <label class="auth-input__label" for="password">Пароль
+                            <svg class="auth-input__icon" width="30" height="23">
+                              <use xlink:href="./assets/images/sprite.svg#password"></use>
+                            </svg>
+                          </label>
                         </div>
                       </div>
                     </div>
                     <div class="authorization-form__row">
-                      <div class="auth_checkbox">
-                        <input class="auth_checkbox__input" type="checkbox" name="checkbox" id="checkbox" checked>
-                        <label class="auth_checkbox_label" for="checkbox">Я человек</label>
+                      <div class="auth-checkbox">
+                        <input class="auth-checkbox__input" type="checkbox" name="checkbox" id="checkbox" checked>
+                        <label class="auth-checkbox_label" for="checkbox">Я человек</label>
                       </div>
                     </div>
                     <div class="authorization-form__row">
-                      <div class="auth_radio">
-                        <h4 class="auth_radio__title">Вы точно не робот?</h4>
-                        <input class="auth_radio__input" type="radio" name="radio" id="radio1" checked>
-                        <label class="auth_radio__label" for="radio1">Да</label>
-                        <input class="auth_radio__input" type="radio" name="radio" id="radio2">
-                        <label class="auth_radio__label" for="radio2">Не уверен</label>
+                      <div class="auth-radio">
+                        <h4 class="auth-radio__title">Вы точно не робот?</h4>
+                        <input class="auth-radio__input" type="radio" name="radio" id="radio1" checked>
+                        <label class="auth-radio__label" for="radio1">Да</label>
+                        <input class="auth-radio__input" type="radio" name="radio" id="radio2">
+                        <label class="auth-radio__label" for="radio2">Не уверен</label>
                       </div>
                     </div>
                     <div class="authorization-form__row">
@@ -132,6 +135,5 @@
         </div>
       </div>
     </div>
-    <script src="./assets/scripts/bundle.js" defer></script>
   </body>
 </html>

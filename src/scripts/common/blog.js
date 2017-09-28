@@ -1,4 +1,7 @@
 function blogInit() {
+    
+    "use strict";
+    
     let blog=document.querySelector('.blog__content');
   
     if (blog) {
