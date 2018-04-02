@@ -14,7 +14,7 @@ const gulpWebpack = require('gulp-webpack');
 const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
 
-const eslint = require('gulp-eslint');
+// const eslint = require('gulp-eslint');
 
 // svg
 const svgSprite = require('gulp-svg-sprite');
@@ -120,13 +120,13 @@ function fonts() {
         .pipe(gulp.dest(paths.fonts.dest));
 }
 
-// linter
-function lint() {
-    return gulp.src('src/scripts/*.js')
-        .pipe(eslint())
-        .pipe(eslint.format()) 
-        .pipe(eslint.failAfterError());
-}
+//// linter
+// function lint() {
+//     return gulp.src('src/scripts/*.js')
+//         .pipe(eslint())
+//         .pipe(eslint.format()) 
+//         .pipe(eslint.failAfterError());
+// }
 
 // svgSprite
 function svgSpriteBuild() {
@@ -170,14 +170,14 @@ exports.scripts = scripts;
 exports.templates = templates;
 exports.images = images;
 exports.fonts = fonts;
-exports.lint = lint;
+//exports.lint = lint;
 exports.watch = watch;
 exports.server = server;
 exports.svgSpriteBuild = svgSpriteBuild;
 
 
 gulp.task('default', gulp.series(
-    gulp.parallel(styles, scripts, lint, templates, images, fonts),
+    gulp.parallel(styles, scripts, /*lint,*/ templates, images, fonts),
     gulp.parallel(watch,server)
     )
 );
